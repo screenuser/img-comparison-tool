@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.imgcomptl.screenster"
+    versionCode = "10"
+    version     = "1.0.0" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>image-comparison-tool</name>
+
+  <description>
+      There is a simple case for why end-to-end UI testing is impossible without automated image comparison. If you’re not using a screenshot comparison tool, your product is at risk of shipping with visual bugs which rarely go unnoticed by users. Obviously, no sane QA engineer is willing to accept this risk.
+  </description>
+
+  <author href="https://screenster.io"  >
+      Screenster
+  </author>
+
+</widget>

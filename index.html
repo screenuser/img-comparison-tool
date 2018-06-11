@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="./xmlrpc.php">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic' rel='stylesheet' type='text/css'>
+	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>Image comparison tools for automated screenshot testing</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.5.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Image comparison tools can help you detect visual bugs that rarely go unnoticed by users. So are you using screenshot comparison tools to make sure your product doesn&#039;t ship with layout shifts and other visual issues?"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Image comparison tools for automated screenshot testing" />
+<meta property="og:description" content="Image comparison tools can help you detect visual bugs that rarely go unnoticed by users. So are you using screenshot comparison tools to make sure your product doesn&#039;t ship with layout shifts and other visual issues?" />
+<meta property="og:url" content="./image-comparison-tool/" />
+<meta property="og:site_name" content="Screenster" />
+<meta property="article:publisher" content="https://www.facebook.com/screenster.io" />
+<meta property="article:section" content="UI Testing Tools" />
+<meta property="article:published_time" content="2017-06-20T08:53:21+00:00" />
+<meta property="article:modified_time" content="2018-05-23T13:46:50+00:00" />
+<meta property="og:updated_time" content="2018-05-23T13:46:50+00:00" />
+<meta property="og:image" content="./wp-content/uploads/2017/01/8Pq8CC2.jpg" />
+<meta property="og:image:secure_url" content="./wp-content/uploads/2017/01/8Pq8CC2.jpg" />
+<meta property="og:image:width" content="1197" />
+<meta property="og:image:height" content="760" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Image comparison tools can help you detect visual bugs that rarely go unnoticed by users. So are you using screenshot comparison tools to make sure your product doesn&#039;t ship with layout shifts and other visual issues?" />
+<meta name="twitter:title" content="Image comparison tools for automated screenshot testing" />
+<meta name="twitter:site" content="@screenster_io" />
+<meta name="twitter:image" content="./wp-content/uploads/2017/01/8Pq8CC2.jpg" />
+<meta name="twitter:creator" content="@screenster_io" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel="amphtml" href="amp/index.html" /><link rel='dns-prefetch' href='https://js.hs-scripts.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Screenster &raquo; Feed" href="./feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Screenster &raquo; Comments Feed" href="./comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Screenster &raquo; Image and screenshot comparison tools for UI testing Comments Feed" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/screenster.io\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href='./wp-content/plugins/contact-form-7/includes/css/styles.css%3Fver=5.0.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ez-icomoon-css'  href='./wp-content/plugins/easy-table-of-contents/vendor/icomoon/style.min.css%3Fver=1.7.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ez-toc-css'  href='./wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css%3Fver=1.7.css' type='text/css' media='all' />
+<style id='ez-toc-inline-css' type='text/css'>
+div#ez-toc-container p.ez-toc-title {font-size: 120%;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}
+</style>
+<link rel='stylesheet' id='genericons-css'  href='./wp-content/themes/twentysixteen/genericons/genericons.css%3Fver=3.4.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='./wp-content/themes/twentysixteen/style.css%3Fver=5.1.7.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpgform-css-css'  href='./wp-content/plugins/wpgform/css/wpgform.css%3Fver=4.9.6.css' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css'  href='./wp-content/plugins/add-to-any/addtoany.min.css%3Fver=1.14.css' type='text/css' media='all' />
+<style id='addtoany-inline-css' type='text/css'>
+div.addtoany_share_save_container {
+opacity: 0.8;
+}
+</style>
+<script type='text/javascript' src='./wp-includes/js/jquery/jquery.js%3Fver=1.12.4'></script>
+<script type='text/javascript' src='./wp-includes/js/jquery/jquery-migrate.min.js%3Fver=1.4.1'></script>
+<script type='text/javascript' src='./wp-content/plugins/add-to-any/addtoany.min.js%3Fver=1.0'></script>
+<script type='text/javascript' src='./wp-content/plugins/wonderplugin-lightbox/engine/wonderpluginlightbox.js%3Fver=4.0'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='./wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<link rel='https://api.w.org/' href='./wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="./xmlrpc.php%3Frsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="./wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.6" />
+<link rel="alternate" type="application/json+oembed" href="./wp-json/oembed/1.0/embed%3Furl=https:%252F%252Fscreenster.io%252Fimage-comparison-tool%252F" />
+<link rel="alternate" type="text/xml+oembed" href="./wp-json/oembed/1.0/embed%3Furl=https:%252F%252Fscreenster.io%252Fimage-comparison-tool%252F&amp;format=xml" />
+
+<script data-cfasync="false">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+(function(d,s,a,b){a=d.createElement(s);b=d.getElementsByTagName(s)[0];a.async=1;a.src="https://static.addtoany.com/menu/page.js";b.parentNode.insertBefore(a,b);})(document,"script");
+</script>
+<link rel="icon" href="./wp-content/uploads/2016/03/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="./wp-content/uploads/2016/03/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="./wp-content/uploads/2016/03/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="./wp-content/uploads/2016/03/cropped-favicon-270x270.png" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MN2F9R8');</script>
+<!-- End Google Tag Manager -->
+</head>
+
+<body class="post-template-default single single-post postid-1103 single-format-standard group-blog">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN2F9R8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="wrapper">
+	<header id="header">
+		<div class="container clearfix">
+		<a class="logo" href="./index.html">screenster</a>		
+			<div class="nav-container">
+				<span class="mobile-opener"><i></i></span>
+				<ul id="nav" class="menu"><li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-12"><a href="./index.html">Home</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313"><a href="./documentation/demo-automation-of-gmail-with-screenster/index.html">Documentation</a></li>
+<li id="menu-item-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45"><a href="./pricing/index.html">Pricing</a></li>
+<li id="menu-item-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="./support/index.html">Support</a></li>
+<li id="menu-item-43" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-43"><a href="./blog/index.html">Blog</a></li>
+<li id="menu-item-1812" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1812"><a href="https://tests.screenster.io/authenticate/signin?remember=true">Login</a></li>
+<li id="menu-item-13" class="sign-link menu-item menu-item-type-custom menu-item-object-custom menu-item-13"><a href="https://tests.screenster.io/authenticate/signup">Sign up</a></li>
+</ul>			</div>
+		</div>
+
+	</header>
+
+<div id="main">	<div class="container">		<div class="blog-wrap">			
+
+
+	<aside id="secondary" class="sidebar" role="complementary">
+		<section id="enhancedtextwidget-2" class="widget widget_text enhanced-text-widget"><div class="textwidget widget-text"><section id="recent-posts-2" class="widget widget_recent_entries">
+    <h2>Related Posts</h2>
+    <ul>
+        <li>
+            <a href="index.html">Image and screenshot comparison tools for UI testing</a>
+            <span class="post-date">June 20, 2017</span>
+        </li>
+        <li>
+            <a href="./selenium-alternatives-for-testing-automation/index.html">Selenium alternatives for testing automation</a>
+            <span class="post-date">March 13, 2016</span>
+        </li>
+        <li>
+            <a href="./selenium-ide-chrome/index.html">How to run tests from Selenium IDE in Chrome</a>
+            <span class="post-date">March 2, 2017</span>
+        </li>
+<li>
+            <a href="./selenium-ide-alternatives-for-ui-regression-testing/index.html">Selenium IDE alternatives for UI regression testing</a>
+            <span class="post-date">February 3, 2017</span>
+        </li>
+<li>
+            <a href="./regression-testing/index.html">What is Regression Testing? Techniques and best practices
+</a>
+            <span class="post-date">May 3, 2017</span>
+        </li>
+    </ul>
+</section></div></section><div class="sticky-sidebar" style="text-align: center;"></br><span class="sidebar-cta">Want to try Screenster on the cloud?</span><a id="btn-try-online-sidebar" class="btn" href="https://tests.screenster.io/authenticate/signup?tryNow=true" target="_blank">Try Online</a></br></br></br></div>
+	</aside><!-- .sidebar .widget-area -->
+	<!--Sidebar sticky functionality-->
+	<script>
+jQuery( document ).ready(function() {
+  
+
+  var $sticky = jQuery('.sticky-sidebar');
+  var $stickyrStopper = jQuery('.sticky-stopper');
+  if (!!$sticky.offset()) { // make sure ".sticky" element exists
+
+    var generalSidebarHeight = $sticky.innerHeight();
+    var stickyTop = $sticky.offset().top;
+    var stickOffset = 100;
+    
+    
+    jQuery(window).scroll(function(){ // scroll event
+      var windowTop = jQuery(window).scrollTop(); // returns number
+var stickyStopperPosition = $stickyrStopper.offset().top;
+var stopPoint = stickyStopperPosition - generalSidebarHeight - stickOffset-78;
+var diff = stopPoint + stickOffset;
+      if (stopPoint < windowTop) {
+          $sticky.css({ position: 'absolute', top: diff });
+      } else if (stickyTop < windowTop+stickOffset) {
+          $sticky.css({ position: 'fixed', top: stickOffset });
+      } else {
+          $sticky.css({position: 'absolute', top: 'initial'});
+      }
+    });
+
+  }
+});
+</script>
+
+
+
+
+			<div class="blog-content">		
+<article id="post-1103" class="post-1103 post type-post status-publish format-standard has-post-thumbnail hentry category-ui-testing-tools">
+	<h1>Image and screenshot comparison tools for UI testing</h1>	<span class="post-date">June 20, 2017</span>
+
+    
+	
+	<div class="post-thumbnail">
+		<img width="1197" height="760" src="./wp-content/uploads/2017/01/8Pq8CC2.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="./wp-content/uploads/2017/01/8Pq8CC2.jpg 1197w, ./wp-content/uploads/2017/01/8Pq8CC2-300x190.jpg 300w, ./wp-content/uploads/2017/01/8Pq8CC2-768x488.jpg 768w, ./wp-content/uploads/2017/01/8Pq8CC2-1024x650.jpg 1024w" sizes="(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 60vw, (max-width: 1362px) 62vw, 840px" />	</div><!-- .post-thumbnail -->
+
+	
+	<div class="content">
+		<span class="entry-content"><p>There is a simple case for why end-to-end UI testing is impossible without automated image comparison. If you’re not using a screenshot comparison tool, your product is at risk of shipping with visual bugs which rarely go unnoticed by users. Obviously, no sane QA engineer is willing to accept this risk.</p>
+<p><span id="more-1103"></span></p>
+<p>So do you automate image comparison when testing UIs? And if yes, what automation tool do you use? Is it a simple module for WebDriver — or other code-based solution — or a dedicated <a href="./visual-css-regression-testing/index.html" target="_blank">visual CSS regression testing tool</a>?</p>
+<p>Let’s look at the popular tools and platforms that QAs use to compare screenshots when testing web UIs.</p>
+<p>In this post, we’ll find out if the functionality of these image comparison tools meets the real-life requirements of UI testing.</p>
+<h2><a href="https://github.com/webdriverio/webdrivercss" target="_blank" rel="nofollow">WebdriverCSS</a></h2>
+<p>WebdriverCSS is a part of WebdriverIO, which makes for a lot of neat functionality. It allows you to write scripts in JavaScript, and it’s compatible with major TDD and BDD frameworks.</p>
+<p>One more reason to like this tool is the <a href="https://github.com/webdriverio/webdrivercss-adminpanel" target="_blank" rel="nofollow">WebdriverCSS Adminpanel</a> — a clean, nothing-extra-style dashboard with a slider for manual image comparison. Sure, setting up the admin panel adds overhead, but the overall experience of using the dashboard feels rewarding.</p>
+<h2><a href="https://github.com/Huddle/PhantomCSS" target="_blank" rel="nofollow">PhantomCSS</a></h2>
+<p>While WebdriverCSS mainly targets real browsers, there is another major option for automation screenshot comparison in headless browsers. PhantomCSS is a screenshot comparison module that works in tandem with Resemble.js and offers a visual/CSS regression testing library for PhantomJS and SlimerJS.</p>
+<p>The drawback of PhantomCSS is it’s overhead-to-value ratio. Since the tool is not for a real browser that people use, you don’t actually test the UI that people see. On the other hand, the overhead of setting it up is comparable to that of a real browser. Due to this, there is little incentive to choose PhantomCSS over WebDriverCSS.</p>
+<h2><a href="https://github.com/Huddle/Resemble.js" target="_blank" rel="nofollow">Resemble.js</a></h2>
+<p>Resemble.js was designed as an image comparison module that PhantomCSS uses to compare screenshots taken by CasperJS. Aside from this, Resemble.js can function as part of any image analysis setup. In fact, it serves as a core of other screenshot comparison tools on this list. The module offers basic image comparison functionality and a clean syntax:</p>
+<p><script src="https://gist.github.com/screenster/89c9be0da0f444413f4759079580492f.js"></script></p>
+<p>Both PhantomCSS and Resemble.js are brainchildren of Huddle, and both of them have a solid developer support and top-notch documentation.</p>
+<p>There’s one issue with Resemble, though. The tool uses a somewhat simplistic pixel matching algorithm that allows for tolerance of the number of different pixels. This is not practical for comparing screenshots of web pages where content will often shift by just a few pixels resulting in image comparison fails.</p>
+<h2><a href="https://github.com/BBC-News/wraith" target="_blank" rel="nofollow">Wraith</a></h2>
+<p>Wraith is another solution that’s primarily targeted at headless browsers. This tool is authored by the development team of BBC News, and it enables screenshot comparison in two distinct modes:</p>
+<ul>
+<li><b>Capture mode</b> — screenshot comparison across two domains (e.g. test version versus live website).</li>
+<li><b>History mode</b> — comparing screenshots across different versions of the UI on the same domain during <a href="./regression-testing/index.html" target="_blank">regression testing</a>.</li>
+</ul>
+<p>To help Wraith move beyond headless browsers, <a href="https://www.openhub.net/p/wraith-selenium" target="_blank" rel="nofollow">Wraith-Selenium</a> emerged as an independent third-party project in 2014. Unfortunately, the <a href="https://github.com/andrewccadman/wraith-selenium" target="_blank" rel="nofollow">GitHub repository of this project is inactive</a> as of 2017.</p>
+<h2><a href="https://github.com/yahoo/blink-diff" target="_blank" rel="nofollow">Blink-Diff</a></h2>
+<p>The development team at Yahoo positions Blink-diff as a lightweight screenshot comparison tool. The solution enables testers to automate image comparison via the command line or by adding a BlinkDiff object to the project code.</p>
+<p>Some of the notable features include cropping and block-out (i.e. ignoring particular UI regions). Besides, the tool breaks down image comparison automation into three distinct comparison modes:</p>
+<ul>
+<li>The <b>Pixel-by-pixel</b> mode detects all differences between the images.</li>
+<li>The <b>Perceptual</b> mode sorts out the differences that are less likely to be seen by humans.</li>
+<li>The <b>Context</b> mode detects missing and/or distorted parts of the image while accepting smaller differences.</li>
+</ul>
+<h2><a href="http://garris.github.io/BackstopJS/" target="_blank" rel="nofollow">BackstopJS</a></h2>
+<p>BackstopJS is a config-driven CSS testing tool that includes image comparison as one of its core features. The tool enables QAs to <a href="./responsive-design-testing-tools-challenges-solutions/index.html" target="_blank">test responsive layouts</a> across multiple pre-specified viewport sizes, and it offers a wide array of reporting functionality. Backstop works with CasperJS, and it seems like a neat tool for web developers who don’t mind spending some extra time writing tests.</p>
+<h2><a href="https://www.npmjs.com/package/protractor-image-comparison" target="_blank" rel="nofollow">Protractor-image-comparison</a></h2>
+<p>A lightweight plugin for Protractor, this tool enables testers to save and compare UI areas and full-scale screenshots on desktop and mobile. This plugin is based on ResembleJS, it uses a concept of baselines, and it targets both mobile websites and hybrid apps on mobile.</p>
+<h2><a href="https://github.com/bem/gemini" target="_blank" rel="nofollow">Gemini (Yandex)</a></h2>
+<p>Gemini’s major claim to fame is the fact that it’s from Yandex, the company that has authored the BEM methodology of CSS development.</p>
+<p>As far as more practical aspects go, Gemini creates an impression of a solid screenshot comparison tool. It works with Selenium and it supports every major browser (including IE8+).</p>
+<p>Just like the more advanced image comparison tools on this list, Gemini is capable of testing separate areas of the web page. Besides, the tool is able to ignore inessential differences (like rendering artifacts) which minimizes false positives. Gemini also features a <a href="https://github.com/gemini-testing/gemini-gui" target="_blank" rel="nofollow">dashboard module</a> that simplifies UI testing (even though this dashboard looks rather simplistic).</p>
+<h2><a href="http://shoov.io/" target="_blank" rel="nofollow">Shoov</a></h2>
+<p>One great thing about Shoov is the slider-based dashboard that seems like a useful thing for manual examination of screenshot differences. When it comes to the automation testing, simple image comparison remains the tool’s core functionality.</p>
+<h2>Image comparison tools matrix</h2>
+<p>Let&#8217;s take another quick look at the screenshot and image comparison tools we&#8217;ve mentioned so far. Below, you can find a comparison matrix that sums up the basic features and benefits that these tools offer. We&#8217;ll exclude Resemble.JS from comparison because it&#8217;s essentially an image comparison module used by other tools (like PhantomCSS).</p>
+<table dir="ltr" border="1" cellspacing="0" cellpadding="5px">
+<tbody>
+<tr>
+<td><strong>Tools / Features</strong></td>
+<td><strong>GUI / VIsual Dashboard</strong></td>
+<td><strong>Browser type</strong></td>
+<td><strong>Distinguishing features</strong></td>
+</tr>
+<tr>
+<td>WebdriverCSS</td>
+<td>Yes</td>
+<td>Real</td>
+<td>Default option for WebDriver.io</td>
+</tr>
+<tr>
+<td>PhantomCSS</td>
+<td>No</td>
+<td>Headless</td>
+<td></td>
+</tr>
+<tr>
+<td>Wraith</td>
+<td>No</td>
+<td>Headless*</td>
+<td>Comparison across domains and product versions</td>
+</tr>
+<tr>
+<td>Blink-Diff</td>
+<td>No</td>
+<td>Real and headless</td>
+<td>Three comparison modes: pixel-perfect, perceptual, context</td>
+</tr>
+<tr>
+<td>BackstopJS</td>
+<td>No</td>
+<td>Headless</td>
+<td>Smart timeouts for Progressive apps, SPAs and AJAX content</td>
+</tr>
+<tr>
+<td>Protractor-image-comparison</td>
+<td>No</td>
+<td>Real and headless</td>
+<td>Good Appium support</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td>Yes</td>
+<td>Real and headless</td>
+<td>Good cross-browser functionality, lots of <a href="https://www.npmjs.com/browse/keyword/gemini-plugin" target="_blank">plugins</a></td>
+</tr>
+<tr>
+<td>Shoov</td>
+<td>Yes</td>
+<td>Real and headless</td>
+<td><a rel="nofollow" class="in-cell-link" href="https://github.com/gemini-testing/gemini" target="_blank">Drupal-friendly</a></td>
+</tr>
+</tbody>
+</table>
+<p><em>*Technically speaking, you can add real browser support to Wraith, but you&#8217;ll have to use an outdated module.</em><br />
+&nbsp;</p>
+<h2>There’s always room for improvement&#8230;</h2>
+<p>As I’ve mentioned earlier, screenshot comparison is vital for effective UI testing — but does this mean that screenshot comparison is enough?</p>
+<p>To give an informed answer to this question, let’s once again look at the typical changes that web pages undergo throughout their life cycle:</p>
+<ul>
+<li>The entire page, or a portion of it, will often shift by just a few pixels of whitespace. There will be no detectable difference to a human eye, yet a 100% difference in pixels.</li>
+<li>Most pages have dynamic content that should be excluded from comparison. Dates, usernames and third-party ads are well known examples.</li>
+<li>A single change such as a new logo in the header will make all new screenshots different from the baseline. For this reason, a UI regression testing tool needs to look at the site/app as a whole, not just at individual pages.</li>
+<li>Comparing text through rendered pixels is unreliable due to anti-aliasing.</li>
+</ul>
+<p>Sure, the screenshot comparison tools on our list address things like anti-aliasing and rendering artifacts. Blink-diff’s perceptual comparison is another example of how image comparison tools tackle the some of typical challenges of UI testing.</p>
+<p>Hand-coding your way around a dynamic UI area, on the other hand, is a more messy process. Handling a layout change that affects all of your pages is another major nuisance that adds overhead to your UI testing.</p>
+<p>So wouldn’t it be super-nice if a visual testing tool could minimize this overhead?</p>
+<p>As a matter of fact, there are visual testing platforms that offer a smarter way for handling the everyday challenges of UI testing. Actually, I am working with a team that’s building an integrated visual testing platform of this kind. Let’s see what it can offer.</p>
+<h2>UI testing with Screenster: moving beyond image comparison</h2>
+<p><img src="./wp-content/themes/twentysixteen/images/screen03.jpg" alt="Screenster completes imageand screenshot comparison with a set of intelligent UI testing tools" /><br />
+Screenster is an intelligent cloud-based platform that you can characterise as screenshot comparison 2.0.0.</p>
+<p>Instead of merely capturing and contrasting screenshots, it generates visual baselines of the UI complete with DOM snapshots and lists of parents for every element. Instead of making you hand-code tests or tinker with auto-generated scripts, it records UX sessions and stores them as series of editable test steps. Instead of taking days to automate a UI test suit, it takes hours.</p>
+<p>Below, you’ll find a glimpse of the smart functionality offered by Screenster.</p>
+<h2>Simple handling of dynamic UI regions</h2>
+<p>True, most of the tools mentioned in this post offer a way of handling dynamic portions of the UI. The problem is they do it via hand-coding, and hand-coding your way around an ever-changing piece of a UI screenshot isn’t exactly a streamlined process. Also, dealing with page coordinates is a real headache when you test complex responsive layouts.</p>
+<p>With Screenster, excluding a dynamic UI region from future comparison is as simple as a couple of mouse clicks. What’s more, the platform will detect about 99% of dynamic content automatically during the first test run.</p>
+<h2>Automatic handling of timeouts</h2>
+<p>Timeouts are another minor source of frustration, and a factor that contributes to the fragility of UI tests. For decades, hand-coded waits have been the only way to prevent UI tests from breaking whenever loading some element took two seconds longer than usual. In case with most code-based solutions, this slowed down regression test runs.</p>
+<p>With Screenster, on the other hand, the platform will automatically determine the optimal waiting time for every test step. Yet again, a process that used to be tedious will no longer bother you.</p>
+<h2>Test creation in under 3 minutes — with no coding involved</h2>
+<p>The general philosophy with tools like Screenster is that your <a href="./ci-friendly-tools-for-ui-testing-automation-what-are-your-options/index.html" target="_blank">UI testing tool</a> mustn’t slow you down. So if it takes you more than 5 minutes to record a simple real-life test, you’re probably using a wrong tool.</p>
+<p>To get a glimpse of what you can expect from Screenster, check out the video below. In this clip, you’ll see that a basic test for an Ajax-heavy web application with rich UI can be recorded in under 3 minutes.</p>
+<p><iframe src="https://www.youtube.com/embed/DE7LqV-xCsA" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<h2>Readymade cloud infrastructure with zero overhead</h2>
+<p>Okay, so how long does it actually take you to set up an automated screenshot solution? For most teams using one of the traditional tools, spending a day or two generally sounds like a win. In case with Screenster, everything is <i>a lot</i> faster.</p>
+<p>When working with Screenster, you deal with a readymade cloud solution. Sure, you’ll need to install a server, but you won’t have to tinker with dozens of separate modules and dependencies. One of the few things that comes as a separate plugin is the solution for CI support.</p>
+<h2>Sounds convincing? Give it a try!</h2>
+<p>One more thing. In contrast to using one of the 13 tools mentioned in this post, Screenster doesn’t enforce the need of learning to code. Your manual QAs and business team can master the platform on the go — it’s really this simple. Doesn’t this sound like something you should definitely try?<br />
+
+<div class="sticky-stopper"></div>
+<br />
+
+<div class="bottom-cta" style="text-align: center;">
+<h2>Intelligent screenshot comparison</h2>
+<a id="btn-try-online" class="btn" href="https://tests.screenster.io/authenticate/signup?tryNow=true" target="_blank">Try Online</a>
+
+</div>
+<br />
+&nbsp;</p>
+</span><div class="hatom-extra"><span class="entry-title">Image and screenshot comparison tools for UI testing</span> was last modified: <span class="updated"> May 23rd, 2018</span> by <span class="author vcard"><span class="fn">Ilya Goncharov</span></span></div><div class="addtoany_share_save_container addtoany_content addtoany_content_bottom"><div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="./image-comparison-tool/" data-a2a-title="Image and screenshot comparison tools for UI testing"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fscreenster.io%2Fimage-comparison-tool%2F&amp;linkname=Image%20and%20screenshot%20comparison%20tools%20for%20UI%20testing" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fscreenster.io%2Fimage-comparison-tool%2F&amp;linkname=Image%20and%20screenshot%20comparison%20tools%20for%20UI%20testing" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Fscreenster.io%2Fimage-comparison-tool%2F&amp;linkname=Image%20and%20screenshot%20comparison%20tools%20for%20UI%20testing" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_google_plus" href="https://www.addtoany.com/add_to/google_plus?linkurl=https%3A%2F%2Fscreenster.io%2Fimage-comparison-tool%2F&amp;linkname=Image%20and%20screenshot%20comparison%20tools%20for%20UI%20testing" title="Google+" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fscreenster.io%2Fimage-comparison-tool%2F&amp;linkname=Image%20and%20screenshot%20comparison%20tools%20for%20UI%20testing" title="Email" rel="nofollow noopener" target="_blank"></a></div></div>	</div><!-- .content -->
+	
+	<div id="single_post_pagination">
+		<a href="./using-jenkins-ci-for-ui-testing-automation-will-selenium-do/index.html" rel="prev">&laquo; Using Jenkins CI for UI testing. Will Selenium do?</a> <a href="./responsive-design-testing-tools-challenges-solutions/index.html" rel="next">Responsive design testing: tools, challenges, solutions; &raquo</a>	</div>
+	
+	<footer class="footer">
+			</footer><!-- footer -->
+
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+	
+	
+		<div id="respond" class="comment-respond">
+		<h2 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h2>			<form action="./wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /><label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1103' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- .comments-area -->
+			</div>		</div>	</div></div>
+<footer id="footer">
+	<div class="footer-holder">
+		<div class="container clearfix">
+							<section id="nav_menu-2" class="col-md-4 footer-box widget_nav_menu"><h3>Screenster</h3><div class="menu-screenster-menu-container"><ul id="menu-screenster-menu" class="menu"><li id="menu-item-307" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-307"><a href="./documentation/demo-automation-of-gmail-with-screenster/index.html">Documentation</a></li>
+<li id="menu-item-302" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-302"><a href="./documentation/local-installation/index.html">Local Installation</a></li>
+<li id="menu-item-2258" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2258"><a href="./documentation/demo-automation-of-gmail-with-screenster/index.html">Demo: Automation of Gmail with Screenster</a></li>
+<li id="menu-item-2259" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2259"><a href="./documentation/recording-tests/index.html">Recording Tests</a></li>
+<li id="menu-item-2260" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2260"><a href="./documentation/advanced-features/index.html">Advanced Features</a></li>
+<li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="./pricing/index.html">Pricing</a></li>
+<li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="./support/index.html">Support</a></li>
+<li id="menu-item-366" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-366"><a href="./blog/index.html">Blog</a></li>
+<li id="menu-item-367" class="sign-link menu-item menu-item-type-custom menu-item-object-custom menu-item-367"><a href="https://tests.screenster.io">My Tests</a></li>
+</ul></div></section>										<section id="nav_menu-3" class="col-md-4 footer-box widget_nav_menu"><h3>Community</h3><div class="menu-community-menu-container"><ul id="menu-community-menu" class="menu"><li id="menu-item-59" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59"><a target="_blank" href="https://groups.google.com/forum/#!forum/screenster">Google Group</a></li>
+<li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-283"><a href="https://www.facebook.com/screenster.io">Facebook</a></li>
+<li id="menu-item-284" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-284"><a href="https://twitter.com/screenster_io">Twitter</a></li>
+<li id="menu-item-285" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-285"><a href="https://www.linkedin.com/company/screenster">LinkedIn</a></li>
+<li id="menu-item-286" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-286"><a href="https://plus.google.com/u/0/b/102437454572601473183/102437454572601473183">Google+</a></li>
+<li id="menu-item-1521" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1521"><a href="https://www.youtube.com/channel/UCYAf5YzOoXZr8n7r1TEaHlw">YouTube</a></li>
+</ul></div></section>										<section id="nav_menu-4" class="col-md-4 footer-box widget_nav_menu"><h3>Company</h3><div class="menu-company-menu-container"><ul id="menu-company-menu" class="menu"><li id="menu-item-66" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-66"><a href="./about-us/index.html">About Us</a></li>
+<li id="menu-item-68" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-68"><a href="./privacy-policy/index.html">Privacy Policy</a></li>
+<li id="menu-item-67" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="./license-agreement/index.html">License Agreement</a></li>
+<li id="menu-item-1941" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1941"><a href="./contact-us/index.html">Contact Us</a></li>
+</ul></div></section>					</div>
+	</div>
+	<div class="copyright">
+
+<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+    <!-- Breadcrumb NavXT 6.1.0 -->
+<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Screenster." href="./index.html" class="home"><span property="name">Screenster</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Blog." href="./blog/index.html" class="post-root post post-post"><span property="name">Blog</span></a><meta property="position" content="2"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the UI Testing Tools category archives." href="./category/ui-testing-tools/index.html" class="taxonomy category"><span property="name">UI Testing Tools</span></a><meta property="position" content="3"></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name">Image and screenshot comparison tools for UI testing</span><meta property="position" content="4"></span></div>
+		<div class="container">
+
+			2018 &copy; <a style="color:#fff;" target="_blank" href="./index.html">Screenster</a>, LLC. All rights reserved.
+
+		</div>
+	</div>
+</footer>
+
+	<div itemscope itemType="http://schema.org/BlogPosting">
+		<meta itemprop="inLanguage" content="en-US"/>
+		<meta itemprop="headline" content="Image and screenshot comparison tools for UI testing">
+		<meta itemprop="mainEntityOfPage" content="./image-comparison-tool/"/>
+		<meta itemprop="datePublished" content="2017-06-20">
+		<meta itemprop="dateModified" content="2018-05-23">
+		<meta itemprop="articleBody" content="There is a simple case for why end-to-end UI testing is impossible without automated image comparison. If you’re not using a screenshot comparison tool, your product is at risk of shipping with visual bugs which rarely go unnoticed by users. Obviously, no sane QA engineer is willing to accept this risk. So do you automate &hellip; Continue reading "Image and screenshot comparison tools for UI testing"">
+	  <div itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject"/>
+		<meta itemprop="url" content="./wp-content/uploads/2017/01/8Pq8CC2-300x190.jpg">
+		<meta itemprop="width" content="300">
+		<meta itemprop="height" content="300">
+	  </div>
+	  <div itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+		<meta itemprop="name" content="Ilya Goncharov">
+	  </div>
+	  <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+		<meta itemprop="name" content="Screenster">
+		<meta itemprop="url" href=".">
+		<meta itemprop="description" content="Visual UI Testing Automation">
+		<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+		  <meta itemprop="image" content="">
+		  <meta itemprop="url" content="">
+		  <meta itemprop="width" content="300">
+		  <meta itemprop="height" content="300">
+		</span>
+	</div>
+    
+  <div id="wonderpluginlightbox_options" data-skinsfoldername="skins/default/"  data-jsfolder="./wp-content/plugins/wonderplugin-lightbox/engine/" data-autoslide="false" data-slideinterval="5000" data-showtimer="true" data-timerposition="bottom" data-timerheight="2" data-timercolor="#dc572e" data-timeropacity="1" data-showplaybutton="true" data-alwaysshownavarrows="false" data-bordersize="0" data-showtitleprefix="true" data-responsive="true" data-fullscreenmode="true" data-closeonoverlay="true" data-videohidecontrols="false" data-titlestyle="bottom" data-imagepercentage="100" data-enabletouchswipe="true" data-autoplay="true" data-html5player="true" data-overlaybgcolor="#000" data-overlayopacity="0.8" data-defaultvideovolume="1" data-bgcolor="#000" data-borderradius="0" data-thumbwidth="96" data-thumbheight="72" data-thumbtopmargin="12" data-thumbbottommargin="12" data-barheight="50" data-showtitle="false" data-titleprefix="%NUM / %TOTAL" data-titlebottomcss="color:#333; font-size:14px; font-family:Armata,sans-serif,Arial; overflow:hidden; text-align:left;" data-showdescription="false" data-descriptionbottomcss="color:#333; font-size:12px; font-family:Arial,Helvetica,sans-serif; overflow:hidden; text-align:left; margin:4px 0px 0px; padding: 0px;" data-titleinsidecss="color:#fff; font-size:16px; font-family:Arial,Helvetica,sans-serif; overflow:hidden; text-align:left;" data-descriptioninsidecss="color:#fff; font-size:12px; font-family:Arial,Helvetica,sans-serif; overflow:hidden; text-align:left; margin:4px 0px 0px; padding: 0px;" data-videobgcolor="#000" data-html5videoposter="" data-responsivebarheight="false" data-smallscreenheight="415" data-barheightonsmallheight="48" data-notkeepratioonsmallheight="false" data-wonderplugin-lightbox-options="f305a0a9fd" data-_wp_http_referer="/wp-admin/admin.php?page=wonderplugin_lightbox_show_options" style="display:none;"></div><div class="wonderplugin-engine"><a href="http://www.wonderplugin.com/wordpress-lightbox/" title="WordPress Image Lightbox Plugin">WordPress Image Lightbox Plugin</a></div><link rel='stylesheet' id='rainmaker_form_style-css'  href='./wp-content/plugins/icegram-rainmaker/assets/css/form.css%3Fver=0.33.css' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/screenster.io\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='./wp-content/plugins/contact-form-7/includes/js/scripts.js%3Fver=5.0.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var leadin_wordpress = {"userRole":"visitor","pageType":"post","leadinPluginVersion":"6.1.5"};
+/* ]]> */
+</script>
+<script type='text/javascript' async defer src='https://js.hs-scripts.com/4371298.js?ver=4.9.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='./wp-content/themes/twentysixteen/js/functions.js%3Fver=20151204'></script>
+<script type='text/javascript' src='./wp-includes/js/wp-embed.min.js%3Fver=4.9.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rm_pre_data = {"ajax_url":"https:\/\/screenster.io\/wp-admin\/admin-ajax.php","rm_nonce_field":"8588a73fa9"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='./wp-content/plugins/icegram-rainmaker/assets/js/main.js%3Fver=0.33'></script>
+
+</body>
+</html>

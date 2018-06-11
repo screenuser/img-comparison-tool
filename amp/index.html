@@ -1,0 +1,662 @@
+<!doctype html>
+<html amp lang="en-US">
+<head>
+	<meta charset="utf-8">
+    <link rel="dns-prefetch" href="https://cdn.ampproject.org">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+					<meta name="amp-google-client-id-api" content="googleanalytics">
+			<link rel="icon" href="../../wp-content/uploads/2016/03/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="../../wp-content/uploads/2016/03/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2016/03/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://screenster.io/wp-content/uploads/2016/03/cropped-favicon-270x270.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Image comparison tools can help you detect visual bugs that rarely go unnoticed by users. So are you using screenshot comparison tools to make sure your product doesn&#039;t ship with layout shifts and other visual issues?" />
+<meta name="twitter:title" content="Image comparison tools for automated screenshot testing" />
+<meta name="twitter:site" content="@screenster_io" />
+<meta name="twitter:image" content="https://screenster.io/wp-content/uploads/2017/01/8Pq8CC2.jpg" />
+<meta name="twitter:creator" content="@screenster_io" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Image comparison tools for automated screenshot testing" />
+<meta property="og:description" content="Image comparison tools can help you detect visual bugs that rarely go unnoticed by users. So are you using screenshot comparison tools to make sure your product doesn&#039;t ship with layout shifts and other visual issues?" />
+<meta property="og:url" content="https://screenster.io/image-comparison-tool/" />
+<meta property="og:site_name" content="Screenster" />
+<meta property="article:publisher" content="https://www.facebook.com/screenster.io" />
+<meta property="article:section" content="UI Testing Tools" />
+<meta property="article:published_time" content="2017-06-20T08:53:21+00:00" />
+<meta property="article:modified_time" content="2018-05-23T13:46:50+00:00" />
+<meta property="og:updated_time" content="2018-05-23T13:46:50+00:00" />
+<meta property="og:image" content="https://screenster.io/wp-content/uploads/2017/01/8Pq8CC2.jpg" />
+<meta property="og:image:secure_url" content="https://screenster.io/wp-content/uploads/2017/01/8Pq8CC2.jpg" />
+<meta property="og:image:width" content="1197" />
+<meta property="og:image:height" content="760" />
+	<title>Image comparison tools for automated screenshot testing</title>
+		<link rel="canonical" href="../index.html" />
+			<script custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js" async></script>
+			<script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async></script>
+			<script custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+			<script custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js" async></script>
+			<script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async></script>
+		<script src="https://cdn.ampproject.org/v0.js" async></script>
+		<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+		<style amp-custom>
+		
+/* Global Styling */
+body{	background: #f1f1f1; font: 16px/1.4 Sans-serif; }
+a {	color: #312C7E;	text-decoration: none }
+.clearfix, .cb { clear: both }
+amp-iframe{ max-width: 100%; margin-bottom : 20px; }
+amp-anim { max-width: 100%; }
+.alignleft{ margin-right: 12px; margin-bottom:5px; float: left; }
+.alignright{ float:right; margin-left: 12px; margin-bottom:5px; }
+.aligncenter{ text-align:center; margin: 0 auto }
+#statcounter{width: 1px;height:1px;}
+
+/* Template Styles */
+.amp-wp-content, .amp-wp-title-bar div {
+        max-width: 1000px;
+    margin: 0 auto;
+    }
+/* Slide Navigation code */
+.nav_container{ padding: 18px 15px; background: #312C7E; color: #fff; text-align: center }
+amp-sidebar{ width: 250px; }
+.amp-sidebar-image{ line-height: 100px; vertical-align:middle; }
+.amp-close-image{ top: 15px; left: 225px; cursor: pointer; }
+.toggle-navigationv2 ul{ list-style-type: none; margin: 0; padding: 0; }
+.toggle-navigationv2 ul ul li a{ padding-left: 35px; background: #fff; display: inline-block }
+.toggle-navigationv2 ul li a{ padding: 15px 25px; width: 100%; display: inline-block; background: #fafafa; font-size: 14px; border-bottom: 1px solid #efefef; }
+.close-nav{ font-size: 12px; background: rgba(0, 0, 0, 0.25); letter-spacing: 1px; display: inline-block; padding: 10px; border-radius: 100px; line-height: 8px; margin: 14px; left: 191px; color: #fff; }
+.close-nav:hover{ background: rgba(0, 0, 0, 0.45);}
+.toggle-navigation ul{ list-style-type: none; margin: 0; padding: 0; display: inline-block; width: 100% }
+.menu-all-pages-container:after{ content: ""; clear: both }
+.toggle-navigation ul li{ font-size: 13px; border-bottom: 1px solid rgba(0, 0, 0, 0.11); padding: 11px 0px; width: 25%; float: left; text-align: center; margin-top: 6px }
+.toggle-navigation ul ul{ display: none }
+.toggle-navigation ul li a{ color: #eee; padding: 15px; }
+.toggle-navigation{ display: none; background: #444; }
+.toggle-text{ color: #fff; font-size: 12px; text-transform: uppercase; letter-spacing: 3px; display: inherit; text-align: center; }
+.toggle-text:before{ content: "..."; font-size: 32px; position: ; font-family: georgia; line-height: 0px; margin-left: 0px; letter-spacing: 1px; top: -3px; position: relative; padding-right: 10px; }
+.nav_container:hover + .toggle-navigation, .toggle-navigation:hover, .toggle-navigation:active, .toggle-navigation:focus{ display: inline-block; width: 100%; }
+/* Category 2 */
+.category-widget-wrapper{ padding:30px 15% 10px 15% }
+.amp-category-block ul{ list-style-type:none;padding:0 }
+.amp-category-block-btn{ display: block; text-align: center; font-size: 13px; margin-top: 15px; border-bottom: 1px solid #f1f1f1; text-decoration: none; padding-bottom: 8px;}
+.category-widget-gutter h4{ margin-bottom: 0px;}
+.category-widget-gutter ul{ margin-top: 10px; list-style-type:none; padding:0 }
+.amp-category-post{ width: 32%;display: inline-block; word-wrap: break-word;float: left;}
+.amp-category-post amp-img{ margin-bottom:5px; }
+.amp-category-block li:nth-child(3){ margin: 0 1%;}
+.searchmenu{  
+    right: 10px;
+    top: 31%;
+    position: absolute; }
+.searchmenu button{ background:transparent; border:none }
+.closebutton{ background: transparent; border: 0; color: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 30px; width: 32px; height: 32px; font-size: 12px; text-align: center; position: absolute; top: 12px; right: 20px; outline:none }
+amp-lightbox{ background: rgba(0, 0, 0,0.85); }
+/* CSS3 icon */
+
+[class*=icono-]:after, [class*=icono-]:before { content: ''; pointer-events: none; }
+.icono-search:before{ position: absolute; left: 50%; -webkit-transform: rotate(270deg); -ms-transform: rotate(270deg); transform: rotate(270deg); width: 2px; height: 9px; box-shadow: inset 0 0 0 32px; top: 0px; border-radius: 0 0 1px 1px; left: 14px; }
+[class*=icono-] { display: inline-block; vertical-align: middle; position: relative; font-style: normal; color: #f42; text-align: left; text-indent: -9999px; direction: ltr }
+.icono-search { -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%) }
+.icono-search { border: 1px solid; width: 10px; height: 10px; border-radius: 50%; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); margin: 4px 4px 8px 8px; }
+.searchform label{ color: #f7f7f7; display: block; font-size: 10px; letter-spacing: 0.3px; line-height: 0; opacity:0.6 }
+.searchform{ background: transparent; left: 20%; position: absolute; top: 35%; width: 60%; max-width: 100%; transition-delay: 0.5s; }
+.searchform input{ background: transparent; border: 1px solid #666; color: #f7f7f7; font-size: 14px; font-weight: 400; line-height: 1; letter-spacing: 0.3px; text-transform: capitalize; padding: 20px 0px 20px 30px; margin-top: 15px; width: 100%; }
+#searchsubmit{opacity:0}
+.hide{display:none}
+.headerlogo a, [class*=icono-]{ color: #F42F42 }
+/* Pagination */
+.amp-wp-content.pagination-holder { background: none; padding: 0; box-shadow: none; height: auto; min-height: auto; }
+#pagination{ width: 100%; margin-top: 15px; }
+#pagination .next{ float: right; margin-bottom: 10px; }
+#pagination .prev{ float: left }
+#pagination .next a, #pagination .prev a{ margin-bottom: 12px; background: #fefefe; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; -moz-box-shadow: 0 2px 3px rgba(0,0,0,.05); -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.05); box-shadow: 0 2px 3px rgba(0,0,0,.05); padding: 11px 15px; font-size: 12px; color: #666; }
+/* Sticky Social bar in Single */
+.ampforwp-social-icons-wrapper{ margin: 0.65em 0px 0.65em 0px; height: 28px; }
+.sticky_social{ width: 100%; bottom: 0; display: block; left: 0; box-shadow: 0px 4px 7px #000; background: #fff; padding: 7px 0px 0px 0px; position: fixed; margin: 0; z-index: 10; text-align: center; }
+.amp-social-icon{ width: 50px; height: 28px; display: inline-block; background: #5cbe4a;position: relative; top: -8px; padding-top: 0px; margin-bottom:5px; }
+.amp-social-icon amp-img{ top: 4px; }
+.custom-amp-socialsharing-line{background:#00b900}
+.ampforwp-social-icons custom-amp-socialsharing-vk{background:#45668e}
+.amp-social-odnoklassniki{background:#ed812b}.amp-social-reddit{background:#ff4500}.amp-social-telegram{background:#0088cc}.amp-social-tumblr{background:#35465c}.amp-social-digg{background:#005be2}.amp-social-stumbleupon{background:#eb4924}.amp-social-wechat{background:#7bb32e}.amp-social-viber{background:#8f5db7}
+/* Header */
+header.container{line-height: 0;}
+#header{ background: #fff; text-align: center;padding:17px 0px 17px 0px;display: inline-block;width: 100%;position:relative}
+#header h1{ text-align: center; font-size: 20px; font-weight: bold; line-height: 1; padding: 4px 3px; margin: 0; }
+.amp-logo{left: 0;right: 0;display:inline-block} 
+.amp-logo amp-img{ margin: 15px 0px 10px 0px; }
+.amp-logo amp-img{margin: 0 auto;}
+main { padding: 30px 15% 10px 15%; }
+.amp-wp-content.widget-wrapper{padding:12px 10px 10px 10px;}
+main .amp-wp-content{ margin-bottom: 12px;  padding: 15px; }
+.amp-loop-list, .featured-image-content, .the_content, .taxonomy-description{background: #fff; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; -moz-box-shadow: 0 2px 3px rgba(0,0,0,.05); -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.05); box-shadow: 0 2px 3px rgba(0,0,0,.05);}
+.home-post_image{ float: right; margin-left: 15px; margin-bottom: -6px; }
+.amp-wp-title{ margin-top: 0px; }
+h2.amp-wp-title{ line-height: 30px; }
+h2.amp-wp-title a{ font-weight: 300; color: #000; font-size: 20px; }
+h2.amp-wp-title , .amp-wp-post-content p{ margin: 0 0 0 5px; }
+/* For Excerpt */
+.amp-wp-post-content .small-screen-excerpt{
+	display: none;
+}
+.amp-wp-post-content .large-screen-excerpt {
+	display: block;
+}
+.amp-wp-post-content p{ font-size: 12px; color: #999; line-height: 20px; margin: 3px 0 0 5px; }
+main .amp-archive-heading{ background : none; box-shadow: none; padding: 5px; }
+.amp-sub-archives li{width: 50%;} .amp-sub-archives ul{padding: 0;list-style: none;display: flex;font-size: 12px;line-height: 1.2;margin: 5px 0 10px 0px;}.page-title{font-size: 1.17em;padding: 6px 0;}
+
+/* Footer */
+#footer{ background : #fff; font-size: 13px; text-align: center; letter-spacing: 0.2px; padding: 20px 0; }
+#footer p:first-child{ margin-bottom: 12px; }
+#footer p{ margin: 0 }
+.footer_menu ul{ list-style-type: none; padding: 0; text-align: center; margin: 0px 20px 25px 20px; line-height: 27px; font-size: 13px }
+.footer_menu ul li{ display:inline; margin:0 10px; }
+.footer_menu ul li:first-child{ margin-left:0 }
+.footer_menu ul li:last-child{ margin-right:0 }
+.footer_menu ul ul{ display:none }
+/* Single */
+.comment-button-wrapper{ margin-bottom: 0px; margin-top: 60px; text-align:center }
+.comment-button-wrapper a{ color: #fff; background: #312c7e; font-size: 13px; padding: 10px 20px 10px 20px; box-shadow: 0 0px 3px rgba(0,0,0,.04); border-radius: 80px; }
+h1.amp-wp-title{ text-align: center; margin: 0.7em 0px 0.6em 0px; font-size: 1.5em; }
+.amp-wp-content.post-title-meta, .amp-wp-content.post-pagination-meta{ background: none; padding:  0; box-shadow:none }
+.post-pagination-meta{ min-height:75px }
+.single-post .post-pagination-meta{ min-height:auto }
+.single-post .ampforwp-social-icons{ display:inline-block }
+.post-pagination-meta .amp-wp-tax-category, .post-title-meta .amp-wp-tax-tag{ display : none; }
+.amp-meta-wrapper{ border-bottom: 1px solid #DADADA; padding-bottom:10px; display:inline-block; width:100%; margin-bottom:0 }
+.amp-wp-meta{ padding-left: 0; }
+.amp-wp-tax-category{ float:right }
+.amp-wp-tax-tag, .amp-wp-meta li{ list-style: none; display: inline-block; }
+li.amp-wp-tax-category{ float: right }
+.amp-wp-byline, .amp-wp-posted-on{ float: left }
+.amp-wp-content amp-img{ max-width: 100%; }
+figure{ margin: 0; }
+figcaption{ font-size: 11px; margin-bottom: 11px; background: #eee; padding: 6px 8px; }
+
+.amp-wp-author:before{ content: "By "; color: #555; }
+.amp-wp-author{ margin-right: 1px; }
+.amp-wp-meta{ font-size: 12px; color: #555; }
+.amp-wp-author-name:before{content:'By';}
+.amp-ad-wrapper{ text-align: center }
+.single-post main{ padding:12px 15% 10px 15% }
+.the_content p{ margin-top: 5px; color: #333; font-size: 15px; line-height: 26px; margin-bottom: 15px; }
+.amp-wp-tax-tag{ font-size: 13px; border: 0; display: inline-block; margin: 0.5em 0px 0.7em 0px; width: 100%; }
+main .amp-wp-content.featured-image-content{ padding: 0px; border: 0; margin-bottom: 0; box-shadow: none }
+.amp-wp-article-featured-image amp-img {margin: 0 auto;}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text, .ampforwp-gallery-item .wp-caption-text{color: #696969; font-size: 11px; line-height: 15px; background: #eee; margin: 0; padding: .66em .75em; text-align: center;}
+.ampforwp-gallery-item.amp-carousel-slide { padding-bottom: 20px;}
+.amp-wp-content.post-pagination-meta{ max-width: 1030px; }
+.single-post .ampforwp-social-icons.ampforwp-social-icons-wrapper{ margin: 0.9em auto 0.9em auto ; max-width: 1030px; }
+.amp-wp-article-header.amp-wp-article-category.ampforwp-meta-taxonomy{ margin: 10px auto; max-width: 1030px; } .ampforwp_single_excerpt { margin-bottom:15px; font-size: 15px; text-align:center}
+.single-post .amp_author_area amp-img{ margin: 0; float: left; margin-right: 12px; border-radius: 60px; }
+.single-post .amp_author_area .amp_author_area_wrapper{ display: inline-block; width: 100%; line-height: 1.4; margin-top: 2px; font-size: 13px; color:#333; font-family: sans-serif; }
+/* Related Posts */
+main .amp-wp-content.relatedpost{ background: none; box-shadow: none; max-width: 1030px; padding:0px 0 0 0; margin:1.8em auto 1.5em auto }
+ .related_posts .related-title, .comments_list h3{ font-size: 14px; font-weight: bold; letter-spacing: 0.4px; margin: 15px 0 10px 0; color: #333; }
+.related_posts .related-title {
+	display: block;
+}
+.related_posts ol{ list-style-type:none; margin:0; padding:0 }
+.related_posts ol li{ display:inline-block; width:100%; margin-bottom: 12px; background: #fefefe; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; -moz-box-shadow: 0 2px 3px rgba(0,0,0,.05); -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.05); box-shadow: 0 2px 3px rgba(0,0,0,.05); padding: 0px; }
+.related_posts .related_link{ margin-top:18px; margin-bottom:10px; margin-right:10px }
+.related_posts .related_link a{ font-weight: 300; color: #000; font-size: 18px; }
+.related_posts ol li amp-img{ width:100px; float:left; margin-right:15px }
+.related_posts ol li p{ font-size: 12px; color: #999; line-height: 1.2; margin: 12px 0 0 0; }
+.no_related_thumbnail{ padding: 15px 18px; }
+.no_related_thumbnail .related_link{ margin: 16px 18px 20px 19px; }
+/* Comments */
+.page-numbers{padding: 9px 10px;background: #fff;font-size: 14px}
+.ampforwp-comment-wrapper{margin:1.8em 0px 1.5em 0px}
+main .amp-wp-content.comments_list {background: none;box-shadow: none;max-width: 1030px;padding:0}
+.comments_list div{ display:inline-block;}
+.comments_list ul{ margin:0;padding:0}
+.comments_list ul.children{ padding-bottom:10px; margin-left: 4%; width: 96%;} 
+.comments_list ul li p{ margin:0;font-size:15px;clear:both;padding-top:16px; word-break: break-word;}
+.comments_list ul li{ font-size:13px;list-style-type:none; margin-bottom: 12px; background: #fefefe; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; -moz-box-shadow: 0 2px 3px rgba(0,0,0,.05); -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.05); box-shadow: 0 2px 3px rgba(0,0,0,.05);padding: 0px;max-width: 1000px;width:100%;}
+.comments_list ul li .comment-body{ padding: 25px;width: 91%;}
+.comments_list ul li .comment-body .comment-author{ margin-right:5px}
+.comment-author{ float:left }
+.comment-author-img{float: left; margin-right: 5px; border-radius: 60px;}
+.single-post footer.comment-meta{ padding-bottom: 0; line-height: 1.7;}
+.comments_list li li{ margin: 20px 20px 10px 20px;background: #f7f7f7;box-shadow: none;border: 1px solid #eee;}
+.comments_list li li li{ margin:20px 20px 10px 20px}
+.comment-content amp-img{max-width: 300px;}
+.amp-facebook-comments{margin-top:45px}
+/* ADS */
+.amp_home_body .amp_ad_1{ margin-top: 10px; margin-bottom: -20px; }
+.single-post .amp_ad_1{ margin-top: 10px; margin-bottom: -20px; }
+html .single-post .ampforwp-incontent-ad-1 { margin-bottom: 10px; }
+.amp-ad-4{ margin-top:10px; }
+.amp-wp-content blockquote { background-color: #fff; border-left: 3px solid; margin: 0; padding: 15px 20px 8px 24px; background: #f3f3f3; }
+pre { white-space: pre-wrap; }
+/* Tables */
+table { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; overflow-x: auto; }
+table a:link { font-weight: bold; text-decoration: none; }
+table a:visited { color: #999999; font-weight: bold; text-decoration: none; }
+table a:active,
+table a:hover { color: #bd5a35; text-decoration: underline; }
+table { font-family: Arial, Helvetica, sans-serif; color: #666; font-size: 12px; text-shadow: 1px 1px 0px #fff; background: #eee; margin: 0px; width: 95%; }
+table th { padding: 21px 25px 22px 25px; border-top: 1px solid #fafafa; border-bottom: 1px solid #e0e0e0; background: #ededed; background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb)); background: -moz-linear-gradient(top, #ededed, #ebebeb); }
+table th:first-child { text-align: left; padding-left: 20px; }
+table tr:first-child th:first-child { -moz-border-radius-topleft: 3px; -webkit-border-top-left-radius: 3px; border-top-left-radius: 3px; }
+table tr:first-child th:last-child { -moz-border-radius-topright: 3px; -webkit-border-top-right-radius: 3px; border-top-right-radius: 3px; }
+table tr { text-align: center; padding-left: 20px; }
+table td:first-child { text-align: left; padding-left: 20px; border-left: 0; }
+table td { padding: 18px; border-top: 1px solid #ffffff; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; background: #fafafa; background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa)); background: -moz-linear-gradient(top, #fbfbfb, #fafafa); }
+table tr.even td { background: #f6f6f6; background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6)); background: -moz-linear-gradient(top, #f8f8f8, #f6f6f6); }
+table tr:last-child td {border-bottom: 0;}
+table tr:last-child td:first-child { -moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px; border-bottom-left-radius: 3px; }
+table tr:last-child td:last-child { -moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px; border-bottom-right-radius: 3px; }
+table tr:hover td { background: #f2f2f2; background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0)); background: -moz-linear-gradient(top, #f2f2f2, #f0f0f0); }
+.hide-meta-info{ display: none; }
+/* Responsive */
+@media screen and (min-width: 650px) { table {display: inline-table;}  }
+@media screen and (max-width: 800px) { .single-post main{ padding: 12px 10px 10px 10px } }
+@media screen and (max-width: 630px) { .related_posts ol li p{ display:none } .related_link { margin: 16px 18px 20px 19px; } .amp-category-post {line-height: 1.45;font-size: 14px; } .amp-category-block li:nth-child(3) {margin:0 0.6%} }
+@media screen and (max-width: 510px) { .ampforwp-tax-category span{ display:none }
+.related_posts ol li p{ line-height: 1.6; margin: 7px 0 0 0; }
+.related_posts .related_link { margin: 17px 18px 17px 19px; }
+.comments_list ul li .comment-body{ width:auto }
+}
+@media screen and (max-width: 425px) { .related_posts .related_link p{ display:none } .alignright, .alignleft {float: none;} .related_posts .related_link { margin: 13px 18px 14px 19px; } .related_posts .related_link a{ font-size: 18px; line-height: 1.7; } .amp-meta-wrapper{ display: inline-block; margin-bottom: 0px; margin-top: 8px; width:100% } .ampforwp-tax-category{ padding-bottom:0 } h1.amp-wp-title{ margin: 16px 0px 13px 0px; } .amp-wp-byline{ padding:0 }   .related_posts .related_link a { font-size: 17px; line-height: 1.5; } }
+@media screen and (max-width: 375px) { #pagination .next a, #pagination .prev a{ padding: 10px 6px; font-size: 11px; color: #666; } .related_posts .related-title, .comments_list h3{ margin-top:15px; } #pagination .next{ margin-bottom:15px;} .related_posts .related_link a { font-size: 15px; line-height: 1.6; } }
+@media screen and (max-width: 340px) { .related_posts .related_link a { font-size: 15px; } .single-post main{ padding: 10px 5px 10px 5px } .the_content .amp-ad-wrapper{ text-align: center; margin-left: -13px; } .amp-category-post {line-height: 1.45;font-size: 12px; } .amp-category-block li:nth-child(3) {margin:0%} }
+@media screen and (max-width: 320px) { .related_posts .related_link a { font-size: 13px; } h1.amp-wp-title{ font-size:17px; padding:0px 4px	} }
+@media screen and (max-width: 400px) { .amp-wp-title{ font-size: 19px; margin: 21px 10px -1px 10px; } }
+@media screen and (max-width: 767px) {  .amp-wp-post-content .large-screen-excerpt { display: none; } .amp-wp-post-content .small-screen-excerpt { display: block; } main, .amp-category-block, .category-widget-wrapper{ padding: 15px 18px 0px 18px; } .toggle-navigation ul li{ width: 50% }    }
+@media screen and (max-width: 495px) { h2.amp-wp-title a{ font-size: 17px; line-height: 26px;} }
+.amp-wp-tax-tag a, a, .amp-wp-author, .headerlogo a, [class*=icono-] { color: #0a89c0;; }
+body a {color: #0a89c0 }
+.amp-wp-content blockquote{ border-color:#0a89c0;; }
+.nav_container, .comment-button-wrapper a { background:  #0a89c0;; }
+.nav_container a{ color:#fff }
+amp-user-notification { border-color:  #0a89c0;; }
+amp-user-notification button { background-color:  #0a89c0;; }
+.single-post footer { padding-bottom: 40px; }
+.amp-ad-2{ margin-bottom: 50px; }
+/**/
+.amp-wp-author:before{ content: " By  "; }
+.ampforwp-tax-category span:first-child:after { content: ' '; }
+.ampforwp-tax-category span:after,.ampforwp-tax-tag span:after { content: ', '; }
+.ampforwp-tax-category span:last-child:after, .ampforwp-tax-tag span:last-child:after { content: ' '; }
+.amp-wp-article-content img { max-width: 100%; }
+.design_2_wrapper .amp-loop-list .amp-wp-meta {display: none;}
+.breadcrumb{line-height: 1;margin-bottom:6px;}
+.breadcrumb ul, .category-single ul{padding:0; margin:0;}
+.breadcrumb ul li{display:inline;}
+.breadcrumb ul li a, .breadcrumb ul li span{font-size:12px;}
+.breadcrumb ul li a::after {content: "►";display: inline-block;font-size: 8px;padding: 0 6px 0 7px;vertical-align: middle;opacity: 0.5;position:relative;top: -0.5px;}
+.breadcrumb ul li:hover a::after{color:#c3c3c3;}
+.breadcrumb ul li:last-child a::after{display:none;}
+ 
+.amp-menu > li > a > amp-img, .sub-menu > li > a > amp-img { display: inline-block; margin-right: 4px; }
+.menu-item amp-img {width: 16px; height: 11px; display: inline-block; margin-right: 5px;}
+.amp-carousel-container {position: relative;width: 100%;height: 100%;} 
+.amp-carousel-img img {object-fit: contain;}
+/* Slide Navigation code */
+.amp-menu li{position:relative}
+.amp-menu li.menu-item-has-children ul{display:none;margin:0;background:#222}
+.amp-menu li.menu-item-has-children ul ul{background:#444}
+.amp-menu li.menu-item-has-children:hover > ul{display:block}
+.amp-menu li.menu-item-has-children:after{content:'\25be';position:absolute;padding: 10px 15px 10px 30px;right:0;font-size:18px;color:#ccc;top:0;z-index:10000;line-height:1}
+.amp-ad-wrapper span { display: inherit; font-size: 12px; line-height: 1;}
+/******* Paste your Custom CSS in this Editor *******/			.addtoany_list a {
+		padding: 0 4px;
+	}
+	.addtoany_list a amp-img {
+		display: inline-block;
+	}
+	.a2a_dd img{background-color:#0166FF;}.a2a_button_facebook img{background-color:#3B5998;}.a2a_button_twitter img{background-color:#55ACEE;}.a2a_button_linkedin img{background-color:#007BB5;}.a2a_button_google_plus img{background-color:#DD4B39;}.a2a_button_email img{background-color:#0166FF;}    .amp-logo amp-img{width:0px}
+ /* Inline styles */
+.amp-wp-inline-2f0158eb062d1ac553a7edcb8a744628{text-align:center;}
+
+	</style>
+</head>
+<body class="body single-post 1103 post-id-1103 singular-1103 design_2_wrapper" >
+<header class="container">
+  <div id="headerwrap">
+      <div id="header">
+                <div class="amp-logo">
+  
+                  <h1><a href="../../index.html"    >Screenster</a></h1>
+         </div>
+                       </div>
+  </div>
+</header>
+
+<div on='tap:sidebar.toggle' role="button" tabindex="0" class="nav_container">
+	<a href="index.html#" class="toggle-text">Navigate</a>
+</div>
+
+<amp-sidebar id='sidebar'
+    layout="nodisplay"
+    side="right">
+  <div class="toggle-navigationv2">
+      <div role="button" tabindex="0" on='tap:sidebar.close' class="close-nav">X</div>
+                <nav id ="primary-amp-menu" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
+         
+<div class="menu amp-menu"><ul><li class="page_item page-item-698"><a href="https://screenster.io/screenster-survey/"><span itemprop="name">#698 (no title)</span></a></li>
+<li class="page_item page-item-64"><a href="../../about-us/index.html"><span itemprop="name">About Us</span></a></li>
+<li class="page_item page-item-41 current_page_parent"><a href="../../blog/index.html"><span itemprop="name">Blog</span></a></li>
+<li class="page_item page-item-97"><a href="../../contact-us/index.html"><span itemprop="name">Contact Us</span></a></li>
+<li class="page_item page-item-35 page_item_has_children"><a href="../../documentation/demo-automation-of-gmail-with-screenster/index.html"><span itemprop="name">Documentation</span></a>
+<ul class="children"><li class="page_item page-item-1957"><a href="../../documentation/demo-automation-of-gmail-with-screenster/index.html"><span itemprop="name">Demo: Automation of Gmail with Screenster</span></a></li>
+	<li class="page_item page-item-2364"><a href="../../documentation/ui-testing-infrastructure-with-screenster/index.html"><span itemprop="name">UI Testing Infrastructure with Screenster</span></a></li>
+	<li class="page_item page-item-71"><a href="../../documentation/local-installation/index.html"><span itemprop="name">Local Installation</span></a></li>
+	<li class="page_item page-item-2093"><a href="../../documentation/advanced-features/index.html"><span itemprop="name">Advanced Features</span></a></li>
+	<li class="page_item page-item-2039"><a href="../../documentation/recording-tests/index.html"><span itemprop="name">Recording Tests</span></a></li>
+	<li class="page_item page-item-824"><a href="https://screenster.io/documentation/visual-tests-best-practices/"><span itemprop="name">Best practices of visual tests recording</span></a></li>
+	<li class="page_item page-item-391"><a href="../../documentation/screenster-ci-client/index.html"><span itemprop="name">CI Client</span></a></li>
+	<li class="page_item page-item-2313"><a href="../../documentation/test-parameters/index.html"><span itemprop="name">Test Parameters</span></a></li>
+	<li class="page_item page-item-2316"><a href="../../documentation/running-tests-verification-modes/index.html"><span itemprop="name">Running Tests: Verification Modes</span></a></li>
+	<li class="page_item page-item-911"><a href="../../documentation/screenster-public-api/index.html"><span itemprop="name">Screenster Public API</span></a></li>
+	<li class="page_item page-item-2321"><a href="../../documentation/detecting-ui-changes/index.html"><span itemprop="name">Detecting UI changes</span></a></li>
+	<li class="page_item page-item-2326"><a href="../../documentation/approving-expected-changes-to-baseline/index.html"><span itemprop="name">Approving Expected Changes to Baseline</span></a></li>
+	<li class="page_item page-item-1883"><a href="../../documentation/faq/index.html"><span itemprop="name">F.A.Q.</span></a></li>
+	<li class="page_item page-item-2635"><a href="../../documentation/multi-tenancy-and-shared-projects/index.html"><span itemprop="name">Sharing Projects</span></a></li>
+	<li class="page_item page-item-2330"><a href="../../documentation/ignore-regions/index.html"><span itemprop="name">Ignoring UI regions and ignore rules</span></a></li>
+	<li class="page_item page-item-2337"><a href="../../documentation/adding-deleting-steps/index.html"><span itemprop="name">Adding and Deleting steps</span></a></li>
+	<li class="page_item page-item-2805"><a href="../../documentation/data-driven-testing/index.html"><span itemprop="name">Data Driven Testing</span></a></li>
+	<li class="page_item page-item-2458"><a href="../../documentation/copying-and-pasting-steps/index.html"><span itemprop="name">Copying and pasting steps</span></a></li>
+	<li class="page_item page-item-2643"><a href="../../documentation/how-to-pay/index.html"><span itemprop="name">Payments and Subscription</span></a></li>
+	<li class="page_item page-item-2472"><a href="../../documentation/changing-the-order-of-steps-drag-and-drop/index.html"><span itemprop="name">Changing the order of steps (drag and drop)</span></a></li>
+	<li class="page_item page-item-2345"><a href="../../documentation/projects-and-test-suites/index.html"><span itemprop="name">Projects and Test Suites</span></a></li>
+	<li class="page_item page-item-2334"><a href="../../documentation/smart-selectors/index.html"><span itemprop="name">Smart Selectors</span></a></li>
+	<li class="page_item page-item-2349"><a href="../../documentation/invoking-tests/index.html"><span itemprop="name">Invoking Tests</span></a></li>
+	<li class="page_item page-item-2477"><a href="../../documentation/selecting-ui-elements-by-mouse-hover/index.html"><span itemprop="name">Selecting UI elements with mouse hover</span></a></li>
+	<li class="page_item page-item-2351"><a href="../../documentation/extending-tests/index.html"><span itemprop="name">Extending Tests</span></a></li>
+	<li class="page_item page-item-2342"><a href="../../documentation/updating-selectors/index.html"><span itemprop="name">Updating Selectors</span></a></li>
+	<li class="page_item page-item-2350"><a href="../../documentation/timeouts/index.html"><span itemprop="name">Timeouts</span></a></li>
+	<li class="page_item page-item-2356"><a href="../../documentation/creating-visual-tests-manually/index.html"><span itemprop="name">Creating Visual Tests Manually</span></a></li>
+	<li class="page_item page-item-2355"><a href="../../documentation/importing-and-exporting-tests/index.html"><span itemprop="name">Importing and Exporting Tests</span></a></li>
+	<li class="page_item page-item-2354"><a href="../../documentation/hand-coded-tests/index.html"><span itemprop="name">Hand-coded Tests</span></a></li>
+	<li class="page_item page-item-2499"><a href="../../documentation/screenster-executing-custom-selenium-code/index.html"><span itemprop="name">Executing Custom Selenium Code</span></a></li>
+	<li class="page_item page-item-2512"><a href="../../documentation/drag-and-drop-actions-during-recording/index.html"><span itemprop="name">Drag-and-Drop Actions during Recording</span></a></li>
+	<li class="page_item page-item-3006"><a href="../../documentation/jira-integration/index.html"><span itemprop="name">JIRA Integration</span></a></li>
+</ul></li>
+<li class="page_item page-item-5"><a href="../../index.html"><span itemprop="name">Home</span></a></li>
+<li class="page_item page-item-62"><a href="../../license-agreement/index.html"><span itemprop="name">License Agreement</span></a></li>
+<li class="page_item page-item-37"><a href="../../pricing/index.html"><span itemprop="name">Pricing</span></a></li>
+<li class="page_item page-item-60"><a href="../../privacy-policy/index.html"><span itemprop="name">Privacy Policy</span></a></li>
+<li class="page_item page-item-170"><a href="../../release-history/index.html"><span itemprop="name">Release History</span></a></li>
+<li class="page_item page-item-39"><a href="../../support/index.html"><span itemprop="name">Support</span></a></li>
+<li class="page_item page-item-1904"><a href="https://screenster.io/support-2/"><span itemprop="name">Support with pricing table</span></a></li>
+</ul></div>
+        </nav>
+          </div>
+</amp-sidebar>
+
+	<main>
+		<article class="amp-wp-article">
+						<div class="amp-wp-content breadcrumb"> <ul id="breadcrumbs" class="breadcrumbs"><li class="item-home"><a class="bread-link bread-home" href="../../index.html" title="Homepage">Homepage</a></li><li class="item-cat item-cat-11"><a class="bread-cat bread-cat-11 bread-cat-UI Testing Tools" href="../../category/ui-testing-tools/index.html" title="UI Testing Tools">UI Testing Tools</a></li></ul></div>
+<div class="amp-wp-article-header ampforwp-meta-info ">
+	<div class="amp-wp-content post-title-meta">
+
+			<ul class="amp-wp-meta amp-meta-wrapper">
+		<div class="amp-wp-meta amp-wp-byline">
+		<span class="amp-wp-author author vcard">Ilya Goncharov</span>		<li class="amp-wp-meta-date"> 12 months ago</li>
+			</div>
+
+  	<div class="amp-wp-meta amp-wp-tax-category ampforwp-tax-category">
+  		<span>
+				Categories:  			</span>
+      <span>UI Testing Tools</span>  	</div>
+  
+			</ul>
+	</div>
+</div>
+<header class="amp-wp-article-header ampforwp-title">
+	<h1 class="amp-wp-title">Image and screenshot comparison tools for UI testing</h1>
+	</header>
+			<div class="amp-wp-article-featured-image amp-wp-content featured-image-content">
+				<figure class="amp-wp-article-featured-image wp-caption">
+					<amp-img width="840" height="533" src="https://screenster.io/wp-content/uploads/2017/01/8Pq8CC2-1024x650.jpg" class="attachment-large size-large wp-post-image amp-wp-enforced-sizes" alt="" srcset="https://screenster.io/wp-content/uploads/2017/01/8Pq8CC2-1024x650.jpg 1024w, https://screenster.io/wp-content/uploads/2017/01/8Pq8CC2-300x190.jpg 300w, https://screenster.io/wp-content/uploads/2017/01/8Pq8CC2-768x488.jpg 768w, https://screenster.io/wp-content/uploads/2017/01/8Pq8CC2.jpg 1197w" sizes="(min-width: 840px) 840px, 100vw"></amp-img>									</figure>
+			</div> <div class="amp-wp-article-content">
+	<!--Post Content here-->
+	<div class="amp-wp-content the_content">
+		
+			<p>There is a simple case for why end-to-end UI testing is impossible without automated image comparison. If you’re not using a screenshot comparison tool, your product is at risk of shipping with visual bugs which rarely go unnoticed by users. Obviously, no sane QA engineer is willing to accept this risk.</p>
+<p><!--more--></p>
+<p>So do you automate image comparison when testing UIs? And if yes, what automation tool do you use? Is it a simple module for WebDriver — or other code-based solution — or a dedicated <a href="../../visual-css-regression-testing/index.html" target="_blank">visual CSS regression testing tool</a>?</p>
+<p>Let’s look at the popular tools and platforms that QAs use to compare screenshots when testing web UIs.</p>
+<p>In this post, we’ll find out if the functionality of these image comparison tools meets the real-life requirements of UI testing.</p>
+<h2><a href="https://github.com/webdriverio/webdrivercss" target="_blank" rel="nofollow">WebdriverCSS</a></h2>
+<p>WebdriverCSS is a part of WebdriverIO, which makes for a lot of neat functionality. It allows you to write scripts in JavaScript, and it’s compatible with major TDD and BDD frameworks.</p>
+<p>One more reason to like this tool is the <a href="https://github.com/webdriverio/webdrivercss-adminpanel" target="_blank" rel="nofollow">WebdriverCSS Adminpanel</a> — a clean, nothing-extra-style dashboard with a slider for manual image comparison. Sure, setting up the admin panel adds overhead, but the overall experience of using the dashboard feels rewarding.</p>
+<h2><a href="https://github.com/Huddle/PhantomCSS" target="_blank" rel="nofollow">PhantomCSS</a></h2>
+<p>While WebdriverCSS mainly targets real browsers, there is another major option for automation screenshot comparison in headless browsers. PhantomCSS is a screenshot comparison module that works in tandem with Resemble.js and offers a visual/CSS regression testing library for PhantomJS and SlimerJS.</p>
+<p>The drawback of PhantomCSS is it’s overhead-to-value ratio. Since the tool is not for a real browser that people use, you don’t actually test the UI that people see. On the other hand, the overhead of setting it up is comparable to that of a real browser. Due to this, there is little incentive to choose PhantomCSS over WebDriverCSS.</p>
+<h2><a href="https://github.com/Huddle/Resemble.js" target="_blank" rel="nofollow">Resemble.js</a></h2>
+<p>Resemble.js was designed as an image comparison module that PhantomCSS uses to compare screenshots taken by CasperJS. Aside from this, Resemble.js can function as part of any image analysis setup. In fact, it serves as a core of other screenshot comparison tools on this list. The module offers basic image comparison functionality and a clean syntax:</p>
+<p>Both PhantomCSS and Resemble.js are brainchildren of Huddle, and both of them have a solid developer support and top-notch documentation.</p>
+<p>There’s one issue with Resemble, though. The tool uses a somewhat simplistic pixel matching algorithm that allows for tolerance of the number of different pixels. This is not practical for comparing screenshots of web pages where content will often shift by just a few pixels resulting in image comparison fails.</p>
+<h2><a href="https://github.com/BBC-News/wraith" target="_blank" rel="nofollow">Wraith</a></h2>
+<p>Wraith is another solution that’s primarily targeted at headless browsers. This tool is authored by the development team of BBC News, and it enables screenshot comparison in two distinct modes:</p>
+<ul><li><b>Capture mode</b> — screenshot comparison across two domains (e.g. test version versus live website).</li>
+<li><b>History mode</b> — comparing screenshots across different versions of the UI on the same domain during <a href="../../regression-testing/index.html" target="_blank">regression testing</a>.</li>
+</ul><p>To help Wraith move beyond headless browsers, <a href="https://www.openhub.net/p/wraith-selenium" target="_blank" rel="nofollow">Wraith-Selenium</a> emerged as an independent third-party project in 2014. Unfortunately, the <a href="https://github.com/andrewccadman/wraith-selenium" target="_blank" rel="nofollow">GitHub repository of this project is inactive</a> as of 2017.</p>
+<h2><a href="https://github.com/yahoo/blink-diff" target="_blank" rel="nofollow">Blink-Diff</a></h2>
+<p>The development team at Yahoo positions Blink-diff as a lightweight screenshot comparison tool. The solution enables testers to automate image comparison via the command line or by adding a BlinkDiff object to the project code.</p>
+<p>Some of the notable features include cropping and block-out (i.e. ignoring particular UI regions). Besides, the tool breaks down image comparison automation into three distinct comparison modes:</p>
+<ul><li>The <b>Pixel-by-pixel</b> mode detects all differences between the images.</li>
+<li>The <b>Perceptual</b> mode sorts out the differences that are less likely to be seen by humans.</li>
+<li>The <b>Context</b> mode detects missing and/or distorted parts of the image while accepting smaller differences.</li>
+</ul><h2><a href="http://garris.github.io/BackstopJS/" target="_blank" rel="nofollow">BackstopJS</a></h2>
+<p>BackstopJS is a config-driven CSS testing tool that includes image comparison as one of its core features. The tool enables QAs to <a href="../../responsive-design-testing-tools-challenges-solutions/index.html" target="_blank">test responsive layouts</a> across multiple pre-specified viewport sizes, and it offers a wide array of reporting functionality. Backstop works with CasperJS, and it seems like a neat tool for web developers who don’t mind spending some extra time writing tests.</p>
+<h2><a href="https://www.npmjs.com/package/protractor-image-comparison" target="_blank" rel="nofollow">Protractor-image-comparison</a></h2>
+<p>A lightweight plugin for Protractor, this tool enables testers to save and compare UI areas and full-scale screenshots on desktop and mobile. This plugin is based on ResembleJS, it uses a concept of baselines, and it targets both mobile websites and hybrid apps on mobile.</p>
+<h2><a href="https://github.com/bem/gemini" target="_blank" rel="nofollow">Gemini (Yandex)</a></h2>
+<p>Gemini’s major claim to fame is the fact that it’s from Yandex, the company that has authored the BEM methodology of CSS development.</p>
+<p>As far as more practical aspects go, Gemini creates an impression of a solid screenshot comparison tool. It works with Selenium and it supports every major browser (including IE8+).</p>
+<p>Just like the more advanced image comparison tools on this list, Gemini is capable of testing separate areas of the web page. Besides, the tool is able to ignore inessential differences (like rendering artifacts) which minimizes false positives. Gemini also features a <a href="https://github.com/gemini-testing/gemini-gui" target="_blank" rel="nofollow">dashboard module</a> that simplifies UI testing (even though this dashboard looks rather simplistic).</p>
+<h2><a href="http://shoov.io/" target="_blank" rel="nofollow">Shoov</a></h2>
+<p>One great thing about Shoov is the slider-based dashboard that seems like a useful thing for manual examination of screenshot differences. When it comes to the automation testing, simple image comparison remains the tool’s core functionality.</p>
+<h2>Image comparison tools matrix</h2>
+<p>Let’s take another quick look at the screenshot and image comparison tools we’ve mentioned so far. Below, you can find a comparison matrix that sums up the basic features and benefits that these tools offer. We’ll exclude Resemble.JS from comparison because it’s essentially an image comparison module used by other tools (like PhantomCSS).</p>
+<table width="100%"><tbody><tr><td><strong>Tools / Features</strong></td>
+<td><strong>GUI / VIsual Dashboard</strong></td>
+<td><strong>Browser type</strong></td>
+<td><strong>Distinguishing features</strong></td>
+</tr><tr><td>WebdriverCSS</td>
+<td>Yes</td>
+<td>Real</td>
+<td>Default option for WebDriver.io</td>
+</tr><tr><td>PhantomCSS</td>
+<td>No</td>
+<td>Headless</td>
+<td></td>
+</tr><tr><td>Wraith</td>
+<td>No</td>
+<td>Headless*</td>
+<td>Comparison across domains and product versions</td>
+</tr><tr><td>Blink-Diff</td>
+<td>No</td>
+<td>Real and headless</td>
+<td>Three comparison modes: pixel-perfect, perceptual, context</td>
+</tr><tr><td>BackstopJS</td>
+<td>No</td>
+<td>Headless</td>
+<td>Smart timeouts for Progressive apps, SPAs and AJAX content</td>
+</tr><tr><td>Protractor-image-comparison</td>
+<td>No</td>
+<td>Real and headless</td>
+<td>Good Appium support</td>
+</tr><tr><td>Gemini</td>
+<td>Yes</td>
+<td>Real and headless</td>
+<td>Good cross-browser functionality, lots of <a href="https://www.npmjs.com/browse/keyword/gemini-plugin" target="_blank">plugins</a></td>
+</tr><tr><td>Shoov</td>
+<td>Yes</td>
+<td>Real and headless</td>
+<td><a rel="nofollow" class="in-cell-link" href="https://github.com/gemini-testing/gemini" target="_blank">Drupal-friendly</a></td>
+</tr></tbody></table><p><em>*Technically speaking, you can add real browser support to Wraith, but you’ll have to use an outdated module.</em><br/>
+ </p>
+<h2>There’s always room for improvement…</h2>
+<p>As I’ve mentioned earlier, screenshot comparison is vital for effective UI testing — but does this mean that screenshot comparison is enough?</p>
+<p>To give an informed answer to this question, let’s once again look at the typical changes that web pages undergo throughout their life cycle:</p>
+<ul><li>The entire page, or a portion of it, will often shift by just a few pixels of whitespace. There will be no detectable difference to a human eye, yet a 100% difference in pixels.</li>
+<li>Most pages have dynamic content that should be excluded from comparison. Dates, usernames and third-party ads are well known examples.</li>
+<li>A single change such as a new logo in the header will make all new screenshots different from the baseline. For this reason, a UI regression testing tool needs to look at the site/app as a whole, not just at individual pages.</li>
+<li>Comparing text through rendered pixels is unreliable due to anti-aliasing.</li>
+</ul><p>Sure, the screenshot comparison tools on our list address things like anti-aliasing and rendering artifacts. Blink-diff’s perceptual comparison is another example of how image comparison tools tackle the some of typical challenges of UI testing.</p>
+<p>Hand-coding your way around a dynamic UI area, on the other hand, is a more messy process. Handling a layout change that affects all of your pages is another major nuisance that adds overhead to your UI testing.</p>
+<p>So wouldn’t it be super-nice if a visual testing tool could minimize this overhead?</p>
+<p>As a matter of fact, there are visual testing platforms that offer a smarter way for handling the everyday challenges of UI testing. Actually, I am working with a team that’s building an integrated visual testing platform of this kind. Let’s see what it can offer.</p>
+<h2>UI testing with Screenster: moving beyond image comparison</h2>
+<p><amp-img src="https://screenster.io/wp-content/themes/twentysixteen/images/screen03.jpg" alt="Screenster completes imageand screenshot comparison with a set of intelligent UI testing tools" width="552" height="355" sizes="(min-width: 552px) 552px, 100vw" class="amp-wp-enforced-sizes"></amp-img><br/>
+Screenster is an intelligent cloud-based platform that you can characterise as screenshot comparison 2.0.0.</p>
+<p>Instead of merely capturing and contrasting screenshots, it generates visual baselines of the UI complete with DOM snapshots and lists of parents for every element. Instead of making you hand-code tests or tinker with auto-generated scripts, it records UX sessions and stores them as series of editable test steps. Instead of taking days to automate a UI test suit, it takes hours.</p>
+<p>Below, you’ll find a glimpse of the smart functionality offered by Screenster.</p>
+<h2>Simple handling of dynamic UI regions</h2>
+<p>True, most of the tools mentioned in this post offer a way of handling dynamic portions of the UI. The problem is they do it via hand-coding, and hand-coding your way around an ever-changing piece of a UI screenshot isn’t exactly a streamlined process. Also, dealing with page coordinates is a real headache when you test complex responsive layouts.</p>
+<p>With Screenster, excluding a dynamic UI region from future comparison is as simple as a couple of mouse clicks. What’s more, the platform will detect about 99% of dynamic content automatically during the first test run.</p>
+<h2>Automatic handling of timeouts</h2>
+<p>Timeouts are another minor source of frustration, and a factor that contributes to the fragility of UI tests. For decades, hand-coded waits have been the only way to prevent UI tests from breaking whenever loading some element took two seconds longer than usual. In case with most code-based solutions, this slowed down regression test runs.</p>
+<p>With Screenster, on the other hand, the platform will automatically determine the optimal waiting time for every test step. Yet again, a process that used to be tedious will no longer bother you.</p>
+<h2>Test creation in under 3 minutes — with no coding involved</h2>
+<p>The general philosophy with tools like Screenster is that your <a href="../../ci-friendly-tools-for-ui-testing-automation-what-are-your-options/index.html" target="_blank">UI testing tool</a> mustn’t slow you down. So if it takes you more than 5 minutes to record a simple real-life test, you’re probably using a wrong tool.</p>
+<p>To get a glimpse of what you can expect from Screenster, check out the video below. In this clip, you’ll see that a basic test for an Ajax-heavy web application with rich UI can be recorded in under 3 minutes.</p>
+<amp-iframe src="https://www.youtube.com/embed/DE7LqV-xCsA" width="560" height="315" frameborder="0" allowfullscreen="" sandbox="allow-scripts allow-same-origin allow-popups" data-block-on-consent="" sizes="(min-width: 560px) 560px, 100vw" class="amp-wp-enforced-sizes"><div placeholder="" class="amp-wp-iframe-placeholder"></div></amp-iframe>
+<h2>Readymade cloud infrastructure with zero overhead</h2>
+<p>Okay, so how long does it actually take you to set up an automated screenshot solution? For most teams using one of the traditional tools, spending a day or two generally sounds like a win. In case with Screenster, everything is <i>a lot</i> faster.</p>
+<p>When working with Screenster, you deal with a readymade cloud solution. Sure, you’ll need to install a server, but you won’t have to tinker with dozens of separate modules and dependencies. One of the few things that comes as a separate plugin is the solution for CI support.</p>
+<h2>Sounds convincing? Give it a try!</h2>
+<p>One more thing. In contrast to using one of the 13 tools mentioned in this post, Screenster doesn’t enforce the need of learning to code. Your manual QAs and business team can master the platform on the go — it’s really this simple. Doesn’t this sound like something you should definitely try?<br/></p><div class="sticky-stopper"></div>&#13;
+<br/><div class="bottom-cta amp-wp-inline-2f0158eb062d1ac553a7edcb8a744628">&#13;
+<h2>Intelligent screenshot comparison</h2>&#13;
+<a id="btn-try-online" class="btn" href="https://tests.screenster.io/authenticate/signup?tryNow=true" target="_blank">Try Online</a>&#13;
+&#13;
+</div>&#13;
+<br/>
+ 
+<div class="hatom-extra"><span class="entry-title">Image and screenshot comparison tools for UI testing</span> was last modified: <span class="updated"> May 23rd, 2018</span> by <span class="author vcard"><span class="fn">Ilya Goncharov</span></span></div><div class="addtoany_share_save_container addtoany_content addtoany_content_bottom"><div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://screenster.io/image-comparison-tool/" data-a2a-title="Image and screenshot comparison tools for UI testing"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fscreenster.io%2Fimage-comparison-tool%2F&amp;linkname=Image%20and%20screenshot%20comparison%20tools%20for%20UI%20testing" title="Facebook" rel="nofollow noopener" target="_blank"><amp-img src="https://static.addtoany.com/buttons/facebook.svg" width="32" height="32" alt="Facebook" sizes="(min-width: 32px) 32px, 100vw" class="amp-wp-enforced-sizes"></amp-img></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fscreenster.io%2Fimage-comparison-tool%2F&amp;linkname=Image%20and%20screenshot%20comparison%20tools%20for%20UI%20testing" title="Twitter" rel="nofollow noopener" target="_blank"><amp-img src="https://static.addtoany.com/buttons/twitter.svg" width="32" height="32" alt="Twitter" sizes="(min-width: 32px) 32px, 100vw" class="amp-wp-enforced-sizes"></amp-img></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Fscreenster.io%2Fimage-comparison-tool%2F&amp;linkname=Image%20and%20screenshot%20comparison%20tools%20for%20UI%20testing" title="LinkedIn" rel="nofollow noopener" target="_blank"><amp-img src="https://static.addtoany.com/buttons/linkedin.svg" width="32" height="32" alt="LinkedIn" sizes="(min-width: 32px) 32px, 100vw" class="amp-wp-enforced-sizes"></amp-img></a><a class="a2a_button_google_plus" href="https://www.addtoany.com/add_to/google_plus?linkurl=https%3A%2F%2Fscreenster.io%2Fimage-comparison-tool%2F&amp;linkname=Image%20and%20screenshot%20comparison%20tools%20for%20UI%20testing" title="Google+" rel="nofollow noopener" target="_blank"><amp-img src="https://static.addtoany.com/buttons/google_plus.svg" width="32" height="32" alt="Google+" sizes="(min-width: 32px) 32px, 100vw" class="amp-wp-enforced-sizes"></amp-img></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fscreenster.io%2Fimage-comparison-tool%2F&amp;linkname=Image%20and%20screenshot%20comparison%20tools%20for%20UI%20testing" title="Email" rel="nofollow noopener" target="_blank"><amp-img src="https://static.addtoany.com/buttons/email.svg" width="32" height="32" alt="Email" sizes="(min-width: 32px) 32px, 100vw" class="amp-wp-enforced-sizes"></amp-img></a></div></div>
+	</div>
+	<!--Post Content Ends here-->
+
+	<!--Post Next-Previous Links-->
+				<!--IF Starts here-->
+			<div class="amp-wp-content post-pagination-meta">
+				<div id="pagination">
+
+					<!--Next Link code-->
+					<div class="next">
+															<a href="../../responsive-design-testing-tools-challenges-solutions/amp/index.html">Responsive design testing: tools, challenges, solutions &raquo;</a> 					</div>
+					<!--Next Link code-->
+
+					<!--Prev Link code-->
+					<div class="prev">
+															   <a href="../../using-jenkins-ci-for-ui-testing-automation-will-selenium-do/amp/index.html"> &laquo; Using Jenkins CI for UI testing. Will Selenium do?</a> 					</div>
+					<!--Prev Link code-->
+
+					<!--Clearfix code-->
+					<div class="clearfix"></div>
+					<!--Clearfix code-->
+
+				</div>
+			</div>
+			<!--IF Ends here-->
+			<!--Post Next-Previous Links End here-->
+</div>
+<div class="amp-wp-article-header amp-wp-article-category ampforwp-meta-taxonomy ">
+</div> 
+	<div class="amp-wp-content amp_author_area ampforwp-meta-taxonomy">
+	    <div class="amp_author_area_wrapper">
+	        	                    <amp-img data-block-on-consent src="https://secure.gravatar.com/avatar/9f935d5dbcc07eb4b1e252b4131f739f?s=70&d=mm&r=g" width="70" height="70" layout="fixed"></amp-img>
+	                    <strong> Ilya Goncharov </strong>:
+	        	    </div>
+	</div> 	<div class="amp-wp-content post-pagination-meta ampforwp-social-icons-wrapper ampforwp-social-icons">
+			   
+							<amp-social-share type="twitter"
+												width="50"
+												height="28"
+												data-param-url=""
+                        						data-param-text="TITLE https://screenster.io/?p=1103 via "
+			></amp-social-share>
+							<amp-social-share type="gplus"      width="50" height="28"></amp-social-share>
+							<amp-social-share type="email"      width="50" height="28"></amp-social-share>
+							<amp-social-share type="pinterest"  width="50" height="28"></amp-social-share>
+							<amp-social-share type="linkedin" width="50" height="28"></amp-social-share>
+							<a href="whatsapp://send?text=https://screenster.io/image-comparison-tool/">
+				<div class="amp-social-icon">
+				    <amp-img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgOTAgOTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDkwIDkwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggaWQ9IldoYXRzQXBwIiBkPSJNOTAsNDMuODQxYzAsMjQuMjEzLTE5Ljc3OSw0My44NDEtNDQuMTgyLDQzLjg0MWMtNy43NDcsMC0xNS4wMjUtMS45OC0yMS4zNTctNS40NTVMMCw5MGw3Ljk3NS0yMy41MjIgICBjLTQuMDIzLTYuNjA2LTYuMzQtMTQuMzU0LTYuMzQtMjIuNjM3QzEuNjM1LDE5LjYyOCwyMS40MTYsMCw0NS44MTgsMEM3MC4yMjMsMCw5MCwxOS42MjgsOTAsNDMuODQxeiBNNDUuODE4LDYuOTgyICAgYy0yMC40ODQsMC0zNy4xNDYsMTYuNTM1LTM3LjE0NiwzNi44NTljMCw4LjA2NSwyLjYyOSwxNS41MzQsNy4wNzYsMjEuNjFMMTEuMTA3LDc5LjE0bDE0LjI3NS00LjUzNyAgIGM1Ljg2NSwzLjg1MSwxMi44OTEsNi4wOTcsMjAuNDM3LDYuMDk3YzIwLjQ4MSwwLDM3LjE0Ni0xNi41MzMsMzcuMTQ2LTM2Ljg1N1M2Ni4zMDEsNi45ODIsNDUuODE4LDYuOTgyeiBNNjguMTI5LDUzLjkzOCAgIGMtMC4yNzMtMC40NDctMC45OTQtMC43MTctMi4wNzYtMS4yNTRjLTEuMDg0LTAuNTM3LTYuNDEtMy4xMzgtNy40LTMuNDk1Yy0wLjk5My0wLjM1OC0xLjcxNy0wLjUzOC0yLjQzOCwwLjUzNyAgIGMtMC43MjEsMS4wNzYtMi43OTcsMy40OTUtMy40Myw0LjIxMmMtMC42MzIsMC43MTktMS4yNjMsMC44MDktMi4zNDcsMC4yNzFjLTEuMDgyLTAuNTM3LTQuNTcxLTEuNjczLTguNzA4LTUuMzMzICAgYy0zLjIxOS0yLjg0OC01LjM5My02LjM2NC02LjAyNS03LjQ0MWMtMC42MzEtMS4wNzUtMC4wNjYtMS42NTYsMC40NzUtMi4xOTFjMC40ODgtMC40ODIsMS4wODQtMS4yNTUsMS42MjUtMS44ODIgICBjMC41NDMtMC42MjgsMC43MjMtMS4wNzUsMS4wODItMS43OTNjMC4zNjMtMC43MTcsMC4xODItMS4zNDQtMC4wOS0xLjg4M2MtMC4yNy0wLjUzNy0yLjQzOC01LjgyNS0zLjM0LTcuOTc3ICAgYy0wLjkwMi0yLjE1LTEuODAzLTEuNzkyLTIuNDM2LTEuNzkyYy0wLjYzMSwwLTEuMzU0LTAuMDktMi4wNzYtMC4wOWMtMC43MjIsMC0xLjg5NiwwLjI2OS0yLjg4OSwxLjM0NCAgIGMtMC45OTIsMS4wNzYtMy43ODksMy42NzYtMy43ODksOC45NjNjMCw1LjI4OCwzLjg3OSwxMC4zOTcsNC40MjIsMTEuMTEzYzAuNTQxLDAuNzE2LDcuNDksMTEuOTIsMTguNSwxNi4yMjMgICBDNTguMiw2NS43NzEsNTguMiw2NC4zMzYsNjAuMTg2LDY0LjE1NmMxLjk4NC0wLjE3OSw2LjQwNi0yLjU5OSw3LjMxMi01LjEwN0M2OC4zOTgsNTYuNTM3LDY4LjM5OCw1NC4zODYsNjguMTI5LDUzLjkzOHoiIGZpbGw9IiNGRkZGRkYiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" width="50" height="20" />
+			    </div>
+			</a>
+							<a href="http://line.me/R/msg/text/?https://screenster.io/image-comparison-tool/">
+				<div class="amp-social-icon custom-amp-socialsharing-line"> 
+					<amp-img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI5Ni41MjggMjk2LjUyOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjk2LjUyOCAyOTYuNTI4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCI+CjxnPgoJPHBhdGggZD0iTTI5NS44MzgsMTE1LjM0N2wwLjAwMy0wLjAwMWwtMC4wOTItMC43NmMtMC4wMDEtMC4wMTMtMC4wMDItMC4wMjMtMC4wMDQtMC4wMzZjLTAuMDAxLTAuMDExLTAuMDAyLTAuMDIxLTAuMDA0LTAuMDMyICAgbC0wLjM0NC0yLjg1OGMtMC4wNjktMC41NzQtMC4xNDgtMS4yMjgtMC4yMzgtMS45NzRsLTAuMDcyLTAuNTk0bC0wLjE0NywwLjAxOGMtMy42MTctMjAuNTcxLTEzLjU1My00MC4wOTMtMjguOTQyLTU2Ljc2MiAgIGMtMTUuMzE3LTE2LjU4OS0zNS4yMTctMjkuNjg3LTU3LjU0OC0zNy44NzhjLTE5LjEzMy03LjAxOC0zOS40MzQtMTAuNTc3LTYwLjMzNy0xMC41NzdjLTI4LjIyLDAtNTUuNjI3LDYuNjM3LTc5LjI1NywxOS4xOTMgICBDMjMuMjg5LDQ3LjI5Ny0zLjU4NSw5MS43OTksMC4zODcsMTM2LjQ2MWMyLjA1NiwyMy4xMTEsMTEuMTEsNDUuMTEsMjYuMTg0LDYzLjYyMWMxNC4xODgsMTcuNDIzLDMzLjM4MSwzMS40ODMsNTUuNTAzLDQwLjY2ICAgYzEzLjYwMiw1LjY0MiwyNy4wNTEsOC4zMDEsNDEuMjkxLDExLjExNmwxLjY2NywwLjMzYzMuOTIxLDAuNzc2LDQuOTc1LDEuODQyLDUuMjQ3LDIuMjY0YzAuNTAzLDAuNzg0LDAuMjQsMi4zMjksMC4wMzgsMy4xOCAgIGMtMC4xODYsMC43ODUtMC4zNzgsMS41NjgtMC41NywyLjM1MmMtMS41MjksNi4yMzUtMy4xMSwxMi42ODMtMS44NjgsMTkuNzkyYzEuNDI4LDguMTcyLDYuNTMxLDEyLjg1OSwxNC4wMDEsMTIuODYgICBjMC4wMDEsMCwwLjAwMSwwLDAuMDAyLDBjOC4wMzUsMCwxNy4xOC01LjM5LDIzLjIzMS04Ljk1NmwwLjgwOC0wLjQ3NWMxNC40MzYtOC40NzgsMjguMDM2LTE4LjA0MSwzOC4yNzEtMjUuNDI1ICAgYzIyLjM5Ny0xNi4xNTksNDcuNzgzLTM0LjQ3NSw2Ni44MTUtNTguMTdDMjkwLjE3MiwxNzUuNzQ1LDI5OS4yLDE0NS4wNzgsMjk1LjgzOCwxMTUuMzQ3eiBNOTIuMzQzLDE2MC41NjFINjYuNzYxICAgYy0zLjg2NiwwLTctMy4xMzQtNy03Vjk5Ljg2NWMwLTMuODY2LDMuMTM0LTcsNy03YzMuODY2LDAsNywzLjEzNCw3LDd2NDYuNjk2aDE4LjU4MWMzLjg2NiwwLDcsMy4xMzQsNyw3ICAgQzk5LjM0MywxNTcuNDI3LDk2LjIwOSwxNjAuNTYxLDkyLjM0MywxNjAuNTYxeiBNMTE5LjAzLDE1My4zNzFjMCwzLjg2Ni0zLjEzNCw3LTcsN2MtMy44NjYsMC03LTMuMTM0LTctN1Y5OS42NzUgICBjMC0zLjg2NiwzLjEzNC03LDctN2MzLjg2NiwwLDcsMy4xMzQsNyw3VjE1My4zNzF6IE0xODIuMzA0LDE1My4zNzFjMCwzLjAzMy0xLjk1Myw1LjcyMS00LjgzOCw2LjY1OCAgIGMtMC43MTIsMC4yMzEtMS40NDEsMC4zNDMtMi4xNjEsMC4zNDNjLTIuMTk5LDAtNC4zMjMtMS4wMzktNS42NjYtMi44ODhsLTI1LjIwNy0zNC43MTd2MzAuNjA1YzAsMy44NjYtMy4xMzQsNy03LDcgICBjLTMuODY2LDAtNy0zLjEzNC03LTd2LTUyLjE2YzAtMy4wMzMsMS45NTMtNS43MjEsNC44MzgtNi42NThjMi44ODYtMC45MzYsNi4wNDUsMC4wOSw3LjgyNywyLjU0NWwyNS4yMDcsMzQuNzE3Vjk5LjY3NSAgIGMwLTMuODY2LDMuMTM0LTcsNy03YzMuODY2LDAsNywzLjEzNCw3LDdWMTUzLjM3MXogTTIzMy4zMTEsMTU5LjI2OWgtMzQuNjQ1Yy0zLjg2NiwwLTctMy4xMzQtNy03di0yNi44NDdWOTguNTczICAgYzAtMy44NjYsMy4xMzQtNyw3LTdoMzMuNTdjMy44NjYsMCw3LDMuMTM0LDcsN3MtMy4xMzQsNy03LDdoLTI2LjU3djEyLjg0OWgyMS41NjJjMy44NjYsMCw3LDMuMTM0LDcsN2MwLDMuODY2LTMuMTM0LDctNyw3ICAgaC0yMS41NjJ2MTIuODQ3aDI3LjY0NWMzLjg2NiwwLDcsMy4xMzQsNyw3UzIzNy4xNzcsMTU5LjI2OSwyMzMuMzExLDE1OS4yNjl6IiBmaWxsPSIjRkZGRkZGIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" width="50" height="20" />
+				</div>
+			</a>
+																					</div>
+						<div class="amp-wp-content relatedpost">
+						    <div class="related_posts">
+								<ol class="clearfix">
+									<span class="related-title">Related Post</span>
+																			<li class="has_related_thumbnail">
+										<div class="loop-img "><a href="../../automation-testing-tools-in-2018/amp/index.html"><amp-img src="https://screenster.io/wp-content/uploads/2017/01/automation-testing-tools-150x150.jpg" width="150" height="150" layout=responsive class=""></amp-img></a></div>							                <div class="related_link">
+							                    <a href="../../automation-testing-tools-in-2018/amp/index.html">9 automation testing tools to consider for web applications in 2018</a>
+							                    
+							                    							                    	<p>The year 2017 saw an impressive number of important events as far as UI automation&hellip;</p>
+							                    	
+							                </div>
+							            </li>
+																		<li class="no_related_thumbnail">
+																	                <div class="related_link">
+							                    <a href="../../on-content-verification-and-why-its-important-for-ui-testing-new-feature/amp/index.html">On content verification and why it’s important for UI testing (new feature)</a>
+							                    
+							                    							                    	<p>Okay, this one might actually be a lesser-known term, so what you’re probably asking yourself&hellip;</p>
+							                    	
+							                </div>
+							            </li>
+																		<li class="has_related_thumbnail">
+										<div class="loop-img "><a href="../../screenster-vs-sauce-labs/amp/index.html"><amp-img src="https://screenster.io/wp-content/uploads/2017/05/black-and-white-people-bar-men-min-150x150.jpg" width="150" height="150" layout=responsive class=""></amp-img></a></div>							                <div class="related_link">
+							                    <a href="../../screenster-vs-sauce-labs/amp/index.html">Screenster vs Sauce Labs: cloud testing tools compared</a>
+							                    
+							                    							                    	<p>In the brave new world of 2017, UI regression testing tools shouldn’t take days to&hellip;</p>
+							                    	
+							                </div>
+							            </li>
+																</ol>
+						    </div>
+						</div> 					</article>
+	</main>
+
+	
+  <footer class="container">
+      <div id="footer">
+                <p>                     <a href="index.html#header">Top </a> 
+                                        |  <a class="view-non-amp" href="../index.html" >View Non-AMP Version </a> All Rights Reserved        </p>
+              </div>
+  </footer>
+		<!--Plugin Version :0.9.96 -->
+				 <div class="sticky_social">
+							  		          <amp-social-share type="twitter"
+	                            width="50"
+	                            height="28"
+	                            data-param-url=""
+                        		data-param-text="TITLE https://screenster.io/?p=1103 via "
+	          ></amp-social-share>
+			  				  				    	<amp-social-share type="gplus"      width="50" height="28"></amp-social-share>
+			  				  				    	<amp-social-share type="email"      width="50" height="28"></amp-social-share>
+			  				  				    	<amp-social-share type="pinterest"  width="50" height="28" data-param-media = "https://screenster.io/wp-content/uploads/2017/01/8Pq8CC2.jpg"></amp-social-share>
+			  				  				    	<amp-social-share type="linkedin" width="50" height="28"></amp-social-share>
+			  				  								<a href="whatsapp://send?text=https://screenster.io/image-comparison-tool/">
+							<div class="amp-social-icon">
+							    <amp-img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgOTAgOTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDkwIDkwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggaWQ9IldoYXRzQXBwIiBkPSJNOTAsNDMuODQxYzAsMjQuMjEzLTE5Ljc3OSw0My44NDEtNDQuMTgyLDQzLjg0MWMtNy43NDcsMC0xNS4wMjUtMS45OC0yMS4zNTctNS40NTVMMCw5MGw3Ljk3NS0yMy41MjIgICBjLTQuMDIzLTYuNjA2LTYuMzQtMTQuMzU0LTYuMzQtMjIuNjM3QzEuNjM1LDE5LjYyOCwyMS40MTYsMCw0NS44MTgsMEM3MC4yMjMsMCw5MCwxOS42MjgsOTAsNDMuODQxeiBNNDUuODE4LDYuOTgyICAgYy0yMC40ODQsMC0zNy4xNDYsMTYuNTM1LTM3LjE0NiwzNi44NTljMCw4LjA2NSwyLjYyOSwxNS41MzQsNy4wNzYsMjEuNjFMMTEuMTA3LDc5LjE0bDE0LjI3NS00LjUzNyAgIGM1Ljg2NSwzLjg1MSwxMi44OTEsNi4wOTcsMjAuNDM3LDYuMDk3YzIwLjQ4MSwwLDM3LjE0Ni0xNi41MzMsMzcuMTQ2LTM2Ljg1N1M2Ni4zMDEsNi45ODIsNDUuODE4LDYuOTgyeiBNNjguMTI5LDUzLjkzOCAgIGMtMC4yNzMtMC40NDctMC45OTQtMC43MTctMi4wNzYtMS4yNTRjLTEuMDg0LTAuNTM3LTYuNDEtMy4xMzgtNy40LTMuNDk1Yy0wLjk5My0wLjM1OC0xLjcxNy0wLjUzOC0yLjQzOCwwLjUzNyAgIGMtMC43MjEsMS4wNzYtMi43OTcsMy40OTUtMy40Myw0LjIxMmMtMC42MzIsMC43MTktMS4yNjMsMC44MDktMi4zNDcsMC4yNzFjLTEuMDgyLTAuNTM3LTQuNTcxLTEuNjczLTguNzA4LTUuMzMzICAgYy0zLjIxOS0yLjg0OC01LjM5My02LjM2NC02LjAyNS03LjQ0MWMtMC42MzEtMS4wNzUtMC4wNjYtMS42NTYsMC40NzUtMi4xOTFjMC40ODgtMC40ODIsMS4wODQtMS4yNTUsMS42MjUtMS44ODIgICBjMC41NDMtMC42MjgsMC43MjMtMS4wNzUsMS4wODItMS43OTNjMC4zNjMtMC43MTcsMC4xODItMS4zNDQtMC4wOS0xLjg4M2MtMC4yNy0wLjUzNy0yLjQzOC01LjgyNS0zLjM0LTcuOTc3ICAgYy0wLjkwMi0yLjE1LTEuODAzLTEuNzkyLTIuNDM2LTEuNzkyYy0wLjYzMSwwLTEuMzU0LTAuMDktMi4wNzYtMC4wOWMtMC43MjIsMC0xLjg5NiwwLjI2OS0yLjg4OSwxLjM0NCAgIGMtMC45OTIsMS4wNzYtMy43ODksMy42NzYtMy43ODksOC45NjNjMCw1LjI4OCwzLjg3OSwxMC4zOTcsNC40MjIsMTEuMTEzYzAuNTQxLDAuNzE2LDcuNDksMTEuOTIsMTguNSwxNi4yMjMgICBDNTguMiw2NS43NzEsNTguMiw2NC4zMzYsNjAuMTg2LDY0LjE1NmMxLjk4NC0wLjE3OSw2LjQwNi0yLjU5OSw3LjMxMi01LjEwN0M2OC4zOTgsNTYuNTM3LDY4LjM5OCw1NC4zODYsNjguMTI5LDUzLjkzOHoiIGZpbGw9IiNGRkZGRkYiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" width="50" height="20" />
+							    </div>
+								</a>
+	        	        			<a href="http://line.me/R/msg/text/?https://screenster.io/image-comparison-tool/">
+				<div class="amp-social-icon custom-amp-socialsharing-line">
+					<amp-img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI5Ni41MjggMjk2LjUyOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjk2LjUyOCAyOTYuNTI4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCI+CjxnPgoJPHBhdGggZD0iTTI5NS44MzgsMTE1LjM0N2wwLjAwMy0wLjAwMWwtMC4wOTItMC43NmMtMC4wMDEtMC4wMTMtMC4wMDItMC4wMjMtMC4wMDQtMC4wMzZjLTAuMDAxLTAuMDExLTAuMDAyLTAuMDIxLTAuMDA0LTAuMDMyICAgbC0wLjM0NC0yLjg1OGMtMC4wNjktMC41NzQtMC4xNDgtMS4yMjgtMC4yMzgtMS45NzRsLTAuMDcyLTAuNTk0bC0wLjE0NywwLjAxOGMtMy42MTctMjAuNTcxLTEzLjU1My00MC4wOTMtMjguOTQyLTU2Ljc2MiAgIGMtMTUuMzE3LTE2LjU4OS0zNS4yMTctMjkuNjg3LTU3LjU0OC0zNy44NzhjLTE5LjEzMy03LjAxOC0zOS40MzQtMTAuNTc3LTYwLjMzNy0xMC41NzdjLTI4LjIyLDAtNTUuNjI3LDYuNjM3LTc5LjI1NywxOS4xOTMgICBDMjMuMjg5LDQ3LjI5Ny0zLjU4NSw5MS43OTksMC4zODcsMTM2LjQ2MWMyLjA1NiwyMy4xMTEsMTEuMTEsNDUuMTEsMjYuMTg0LDYzLjYyMWMxNC4xODgsMTcuNDIzLDMzLjM4MSwzMS40ODMsNTUuNTAzLDQwLjY2ICAgYzEzLjYwMiw1LjY0MiwyNy4wNTEsOC4zMDEsNDEuMjkxLDExLjExNmwxLjY2NywwLjMzYzMuOTIxLDAuNzc2LDQuOTc1LDEuODQyLDUuMjQ3LDIuMjY0YzAuNTAzLDAuNzg0LDAuMjQsMi4zMjksMC4wMzgsMy4xOCAgIGMtMC4xODYsMC43ODUtMC4zNzgsMS41NjgtMC41NywyLjM1MmMtMS41MjksNi4yMzUtMy4xMSwxMi42ODMtMS44NjgsMTkuNzkyYzEuNDI4LDguMTcyLDYuNTMxLDEyLjg1OSwxNC4wMDEsMTIuODYgICBjMC4wMDEsMCwwLjAwMSwwLDAuMDAyLDBjOC4wMzUsMCwxNy4xOC01LjM5LDIzLjIzMS04Ljk1NmwwLjgwOC0wLjQ3NWMxNC40MzYtOC40NzgsMjguMDM2LTE4LjA0MSwzOC4yNzEtMjUuNDI1ICAgYzIyLjM5Ny0xNi4xNTksNDcuNzgzLTM0LjQ3NSw2Ni44MTUtNTguMTdDMjkwLjE3MiwxNzUuNzQ1LDI5OS4yLDE0NS4wNzgsMjk1LjgzOCwxMTUuMzQ3eiBNOTIuMzQzLDE2MC41NjFINjYuNzYxICAgYy0zLjg2NiwwLTctMy4xMzQtNy03Vjk5Ljg2NWMwLTMuODY2LDMuMTM0LTcsNy03YzMuODY2LDAsNywzLjEzNCw3LDd2NDYuNjk2aDE4LjU4MWMzLjg2NiwwLDcsMy4xMzQsNyw3ICAgQzk5LjM0MywxNTcuNDI3LDk2LjIwOSwxNjAuNTYxLDkyLjM0MywxNjAuNTYxeiBNMTE5LjAzLDE1My4zNzFjMCwzLjg2Ni0zLjEzNCw3LTcsN2MtMy44NjYsMC03LTMuMTM0LTctN1Y5OS42NzUgICBjMC0zLjg2NiwzLjEzNC03LDctN2MzLjg2NiwwLDcsMy4xMzQsNyw3VjE1My4zNzF6IE0xODIuMzA0LDE1My4zNzFjMCwzLjAzMy0xLjk1Myw1LjcyMS00LjgzOCw2LjY1OCAgIGMtMC43MTIsMC4yMzEtMS40NDEsMC4zNDMtMi4xNjEsMC4zNDNjLTIuMTk5LDAtNC4zMjMtMS4wMzktNS42NjYtMi44ODhsLTI1LjIwNy0zNC43MTd2MzAuNjA1YzAsMy44NjYtMy4xMzQsNy03LDcgICBjLTMuODY2LDAtNy0zLjEzNC03LTd2LTUyLjE2YzAtMy4wMzMsMS45NTMtNS43MjEsNC44MzgtNi42NThjMi44ODYtMC45MzYsNi4wNDUsMC4wOSw3LjgyNywyLjU0NWwyNS4yMDcsMzQuNzE3Vjk5LjY3NSAgIGMwLTMuODY2LDMuMTM0LTcsNy03YzMuODY2LDAsNywzLjEzNCw3LDdWMTUzLjM3MXogTTIzMy4zMTEsMTU5LjI2OWgtMzQuNjQ1Yy0zLjg2NiwwLTctMy4xMzQtNy03di0yNi44NDdWOTguNTczICAgYzAtMy44NjYsMy4xMzQtNyw3LTdoMzMuNTdjMy44NjYsMCw3LDMuMTM0LDcsN3MtMy4xMzQsNy03LDdoLTI2LjU3djEyLjg0OWgyMS41NjJjMy44NjYsMCw3LDMuMTM0LDcsN2MwLDMuODY2LTMuMTM0LDctNyw3ICAgaC0yMS41NjJ2MTIuODQ3aDI3LjY0NWMzLjg2NiwwLDcsMy4xMzQsNyw3UzIzNy4xNzcsMTU5LjI2OSwyMzMuMzExLDE1OS4yNjl6IiBmaWxsPSIjRkZGRkZGIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" width="50" height="20" />
+				</div>
+			</a>
+																					</div> 
+		<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","mainEntityOfPage":"https:\/\/screenster.io\/image-comparison-tool\/","publisher":{"@type":"Organization","name":"Screenster","logo":{"@type":"ImageObject","url":"","height":"60","width":"600"}},"headline":"Image and screenshot comparison tools for UI testing","datePublished":"2017-06-20T08:53:21+00:00","dateModified":"2018-05-23T13:46:50+00:00","author":{"@type":"Person","name":"Ilya Goncharov"},"image":{"@type":"ImageObject","url":"https:\/\/screenster.io\/wp-content\/uploads\/2017\/01\/8Pq8CC2.jpg","width":1197,"height":760},"description":""}</script>
+							<amp-analytics data-block-on-consent type="googleanalytics" id="analytics1">
+							<script type="application/json">
+								{"vars":{"account":"UA-XXXXX-Y"},"triggers":{"trackPageview":{"on":"visible","request":"pageview"}}}							</script>
+						</amp-analytics>
+						
+
+</body>
+</html>
